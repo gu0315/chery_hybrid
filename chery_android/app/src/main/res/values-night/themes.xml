@@ -1,23 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- 透明启动主题 - 深色模式 -->
-    <style name="Theme.App.Starting" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowDisablePreview">true</item>
-    </style>
-
-    <!-- 正常应用主题 - 深色模式（无ActionBar） -->
-    <style name="Theme.App" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <!-- 深色模式下的主色调 - 改为黑色背景以避免顶部显示紫色条 -->
-        <item name="colorPrimary">@color/black</item>
-        
-        <!-- 深色模式下的主色调深色变体 -->
-        <item name="colorPrimaryDark">@color/black</item>
-        
-        <!-- 强调色保持不变 -->
-        <item name="colorAccent">@color/teal_200</item>
-        
-        <!-- 明确设置状态栏颜色为透明，确保不显示颜色条 -->
-        <item name="android:statusBarColor">@android:color/transparent</item>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Chery_android" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 </resources>
