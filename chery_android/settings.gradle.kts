@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "chery_android"
+rootProject.name = "chery"
 include(":app")
