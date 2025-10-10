@@ -73,6 +73,8 @@ public class BaseWebView extends RelativeLayout {
         addView(webView, webViewParams);
     }
 
+
+
     /**
      * 初始化WebView设置
      */
@@ -107,6 +109,7 @@ public class BaseWebView extends RelativeLayout {
                 // 可以在这里添加加载完成时的逻辑
             }
         });
+
 
         // 设置WebChromeClient
         webView.setWebChromeClient(new WebChromeClient() {
