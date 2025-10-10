@@ -1,8 +1,10 @@
 package com.energy.chery_android.webView;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
@@ -58,6 +60,9 @@ public class BaseWebViewActivity extends AppCompatActivity {
                 onWebViewClosePressed();
             }
         });
+        
+        // 设置自定义UserAgent，添加状态栏和导航栏高度信息
+        setupCustomUserAgent();
 
         // 将BaseWebView添加到布局中
         FrameLayout container = findViewById(containerId);
@@ -166,6 +171,39 @@ public class BaseWebViewActivity extends AppCompatActivity {
      */
     private int dpToPx(int dp) {
         return (int) (dp * getResources().getDisplayMetrics().density + 0.5f);
+    }
+
+    /**
+     * 获取状态栏高度（物理像素）
+     * @return 状态栏高度（像素值）
+     */
+    private float getStatusBarHeight() {
+        float statusBarHeightPx = 0;
+        @SuppressLint("InternalInsetResource") int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) statusBarHeightPx = getResources().getDimensionPixelSize(resourceId);
+        // 若获取失败，使用默认值 24dp 转 px
+        if (statusBarHeightPx == 0) statusBarHeightPx = 24 * getResources().getDisplayMetrics().density + 0.5f;
+        // 将 px 转换为 dp
+        float density = getResources().getDisplayMetrics().density;
+        return statusBarHeightPx / density;
+    }
+    /**
+     * 设置WebView的UserAgent，添加状态栏和导航栏高度信息
+     */
+    private void setupCustomUserAgent() {
+        if (baseWebView != null && baseWebView.getWebView() != null) {
+            // 获取原始UserAgent
+            String originalUserAgent = baseWebView.getWebView().getSettings().getUserAgentString();
+            // 获取状态栏高度（像素）
+            int statusBarHeight = (int) getStatusBarHeight();
+            // 导航栏高度（像素）
+            int navigationBarHeight = 48;
+            // 构建包含状态栏和导航栏高度信息的新UserAgent
+            String customUserAgent = originalUserAgent + " StatusBarHeight/" + statusBarHeight + " NavigationBarHeight/" + navigationBarHeight;
+            Log.d( "setupCustomUserAgent: ", customUserAgent);
+            // 设置自定义UserAgent
+            baseWebView.getWebView().getSettings().setUserAgentString(customUserAgent);
+        }
     }
 
     /**

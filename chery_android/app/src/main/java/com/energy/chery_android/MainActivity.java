@@ -30,12 +30,9 @@ public class MainActivity extends BaseWebViewActivity {
         setImmersiveModeEnabled(false);
         
         // 加载网页，设置显示导航栏
-        loadUrl("https://www.baidu.com", true);
-        
+        loadUrl("https://www.baidu.com", false);
         // 可以自定义导航栏标题
         setWebViewNavigationBarTitle("百度首页");
-
-        
         // 添加测试按钮来切换导航栏显示/隐藏
         Button toggleNavButton = new Button(this);
         toggleNavButton.setText("切换导航栏");
