@@ -43,5 +43,6 @@ dependencies {
 
     implementation libs.jdwebview
     implementation libs.jdbridge
+    implementation libs.material.v190
 
 }
