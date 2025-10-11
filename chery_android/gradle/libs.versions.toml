@@ -10,6 +10,8 @@ constraintlayout = "2.1.4"
 materialVersion = "1.9.0"
 navigationFragment = "2.6.0"
 navigationUi = "2.6.0"
+kotlin = "2.2.0"
+coreKtx = "1.10.1"
 
 [libraries]
 jdbridge = { module = "com.github.JDFED.JDHybrid:JDBridge", version.ref = "jdwebview" }
@@ -23,7 +25,9 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 material-v190 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigationUi" }
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 

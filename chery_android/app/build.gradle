@@ -1,5 +1,9 @@
 plugins {
+    // 根据错误提示，Android Gradle 插件需要 Java 17 运行，
+    // 建议先更新 JDK 到 17 版本，此处代码仅为保持原有结构，
+    // 实际需要按提示修改 JDK 配置（如修改 JAVA_HOME 或 org.gradle.java.home）
     alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -23,11 +27,14 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     buildFeatures {
         viewBinding true
+    }
+    kotlinOptions {
+        jvmTarget = '17'
     }
 }
 
@@ -37,6 +44,7 @@ dependencies {
     implementation libs.constraintlayout
     implementation libs.navigation.fragment
     implementation libs.navigation.ui
+    implementation libs.core.ktx
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core

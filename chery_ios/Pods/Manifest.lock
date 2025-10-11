@@ -8,31 +8,31 @@ PODS:
     - JDHybrid/JDBridge
   - JDHybrid/JDWebView (1.0.4):
     - JDHybrid/JDBridge
-  - Masonry (1.1.0)
   - MJExtension (3.4.2)
   - SDWebImage (5.21.2):
     - SDWebImage/Core (= 5.21.2)
   - SDWebImage/Core (5.21.2)
+  - SnapKit (5.7.1)
 
 DEPENDENCIES:
   - JDHybrid
-  - Masonry
   - MJExtension
   - SDWebImage
+  - SnapKit
 
 SPEC REPOS:
   trunk:
     - JDHybrid
-    - Masonry
     - MJExtension
     - SDWebImage
+    - SnapKit
 
 SPEC CHECKSUMS:
   JDHybrid: fd4569dd931a92e26b49df51392dc1a2895bf05f
-  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: e97d164cb411aa9795cf576093a1fa208b4a8dd8
   SDWebImage: 9f177d83116802728e122410fb25ad88f5c7608a
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
 
-PODFILE CHECKSUM: a8ad98b295217c2dfc52a12ea2e43286a851d2eb
+PODFILE CHECKSUM: 59279e4dca8b476920c4eb0f6e320d148db6d694
 
 COCOAPODS: 1.16.2

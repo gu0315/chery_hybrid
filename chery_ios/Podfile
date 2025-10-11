@@ -1,7 +1,7 @@
 platform :ios, '15.0'
 use_frameworks!
 target 'chery_ios' do
-  pod 'Masonry'
+  pod 'SnapKit'
   pod 'SDWebImage'
   pod 'MJExtension'
   pod 'JDHybrid'
