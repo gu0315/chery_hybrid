@@ -14,18 +14,15 @@ import SnapKit
 class BaseWebViewController: UIViewController {
     
     // MARK: - 公开属性
-    
     /// WebView实例
-    var webView: BaseWebView! 
-    
+    var webView: JDWebViewContainer!
     /// 加载的URL
     var urlString: String?
-    
     /// 进度条
-    private var progressView: UIProgressView! 
+    private var progressView: UIProgressView!
     
     /// 是否隐藏导航栏（默认为false）
-    var isNavigationBarHidden: Bool = false { 
+    var isNavigationBarHidden: Bool = false {
         didSet {
             navigationController?.setNavigationBarHidden(isNavigationBarHidden, animated: true)
             updateWebViewFrame()
@@ -33,14 +30,14 @@ class BaseWebViewController: UIViewController {
     }
     
     /// 是否使用沉浸式状态栏（默认为false）
-    var isImmersiveStatusBar: Bool = false { 
+    var isImmersiveStatusBar: Bool = false {
         didSet {
             updateStatusBarStyle()
         }
     }
     
     /// 是否需要处理底部安全区（默认为true）
-    var shouldHandleBottomSafeArea: Bool = true { 
+    var shouldHandleBottomSafeArea: Bool = true {
         didSet {
             updateWebViewFrame()
         }
@@ -63,9 +60,6 @@ class BaseWebViewController: UIViewController {
         
         // 初始化UI
         setupUI()
-        
-        // 配置WebView
-        configureWebView()
         
         // 加载URL
         if let url = urlString {
@@ -99,19 +93,6 @@ class BaseWebViewController: UIViewController {
         self.urlString = url
     }
     
-    /// 初始化方法 - 通过JS代码
-    /// - Parameter jsCode: 要执行的JS代码
-    convenience init(jsCode: String) {
-        self.init()
-        
-        // 存储JS代码，在WebView加载完成后执行
-        self.urlString = "about:blank"
-        self.initialJSCode = jsCode
-    }
-    
-    // 初始JS代码，在WebView加载完成后执行
-    private var initialJSCode: String?
-    
     // MARK: - 私有方法
     
     /// 设置UI
@@ -120,7 +101,7 @@ class BaseWebViewController: UIViewController {
         view.backgroundColor = .white
         
         // 初始化WebView
-        webView = BaseWebView(frame: view.bounds)
+        webView = JDWebViewContainer.init(frame: view.bounds)
         webView.delegate = self
         view.addSubview(webView)
         
@@ -189,7 +170,7 @@ class BaseWebViewController: UIViewController {
     /// 更新WebView的Frame
     private func updateWebViewFrame() {
         // 优化WebView的布局更新
-        UIView.animate(withDuration: 0.3) { 
+        UIView.animate(withDuration: 0.3) {
             self.webView.snp.remakeConstraints { make in
                 if self.isNavigationBarHidden {
                     // 导航栏隐藏时，WebView从顶部开始
@@ -225,13 +206,11 @@ class BaseWebViewController: UIViewController {
             for subview in view.subviews where subview.frame == UIApplication.shared.statusBarFrame {
                 subview.removeFromSuperview()
             }
-            
             // 创建新的状态栏背景视图
             let statusBar = UIView(frame: UIApplication.shared.statusBarFrame)
             statusBar.backgroundColor = isImmersiveStatusBar ? .clear : .white
             view.addSubview(statusBar)
             view.sendSubviewToBack(statusBar)
-            
             // 使用UIWindow的方式设置状态栏样式
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) {
@@ -274,7 +253,7 @@ class BaseWebViewController: UIViewController {
         // 检查URL中是否包含状态栏和导航栏的控制参数
         parseURLParameters(urlString: urlString)
         
-        webView.loadURL(urlString)
+        webView.load(URLRequest(url: URL(string: urlString)!))
     }
     
     /// 解析URL参数
@@ -304,13 +283,6 @@ class BaseWebViewController: UIViewController {
         }
     }
     
-    /// 执行JavaScript代码
-    /// - Parameters:
-    ///   - jsString: JavaScript代码
-    ///   - completionHandler: 执行完成回调（可选）
-    func evaluateJavaScript(_ jsString: String, completionHandler: ((Any?, Error?) -> Void)? = nil) {
-        webView.evaluateJavaScript(jsString, completionHandler: completionHandler)
-    }
     
     // MARK: - KVO监听
     
@@ -321,7 +293,7 @@ class BaseWebViewController: UIViewController {
                 if progress == 1.0 {
                     UIView.animate(withDuration: 0.3, animations: {
                         self.progressView.alpha = 0
-                    }, completion: { 
+                    }, completion: {
                         _ in
                         self.progressView.progress = 0
                         self.progressView.alpha = 1
@@ -333,8 +305,6 @@ class BaseWebViewController: UIViewController {
                 navigationItem.title = title
             }
         }
-        
-        super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
     }
     
     deinit {
@@ -357,13 +327,7 @@ extension BaseWebViewController: WebViewDelegate {
     }
     
     // 网页加载完成时调用
-    func webView(_ webView: JDWebViewContainer!, didFinishNavigation navigation: WKNavigation!) {
-        // 加载完成后执行初始JS代码
-        if let jsCode = self.initialJSCode {
-            self.evaluateJavaScript(jsCode)
-            self.initialJSCode = nil // 执行后清除，避免重复执行
-        }
-        
+    func webView(_ webView: JDWebViewContainer, didFinish navigation: WKNavigation!) {
         // 隐藏进度条
         UIView.animate(withDuration: 0.3) {
             self.progressView.alpha = 0
@@ -371,92 +335,17 @@ extension BaseWebViewController: WebViewDelegate {
     }
     
     // 网页加载失败时调用
-    func webView(_ webView: JDWebViewContainer!, didFail navigation: WKNavigation!, withError error: Error!) {
+    func webView(_ webView: JDWebViewContainer, didFail navigation: WKNavigation!, withError error: Error) {
         // 显示加载失败提示
-        showLoadError(message: error.localizedDescription)
     }
     
     // 决定是否允许导航
-    func webView(_ webView: JDWebViewContainer!, decidePolicyForNavigationAction navigationAction: WKNavigationAction!, decisionHandler: ((WKNavigationActionPolicy) -> Void)!) {
+    func webView(_ webView: JDWebViewContainer, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: ((WKNavigationActionPolicy) -> Void)) {
         // 可以在这里添加导航控制逻辑
         decisionHandler(.allow)
     }
     
-    /// 显示加载失败提示
-    /// - Parameter message: 错误消息
-    private func showLoadError(message: String) {
-        // 隐藏进度条
-        progressView.alpha = 0
-        
-        // 创建错误提示视图
-        let errorView = UIView()
-        errorView.backgroundColor = .white
-        errorView.layer.cornerRadius = 12
-        errorView.layer.shadowColor = UIColor.black.cgColor
-        errorView.layer.shadowOpacity = 0.1
-        errorView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        errorView.layer.shadowRadius = 8
-        errorView.translatesAutoresizingMaskIntoConstraints = false
-        
-        // 创建错误图标
-        let errorIcon = UIImageView(image: UIImage(systemName: "exclamationmark.circle"))
-        errorIcon.tintColor = .red
-        errorIcon.translatesAutoresizingMaskIntoConstraints = false
-        
-        // 创建错误消息标签
-        let errorLabel = UILabel()
-        errorLabel.text = "加载失败：\(message)"
-        errorLabel.textColor = .black
-        errorLabel.numberOfLines = 0
-        errorLabel.textAlignment = .center
-        errorLabel.font = UIFont.systemFont(ofSize: 14)
-        errorLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        // 创建重试按钮
-        let retryButton = UIButton(type: .system)
-        retryButton.setTitle("重试", for: .normal)
-        retryButton.backgroundColor = .blue
-        retryButton.setTitleColor(.white, for: .normal)
-        retryButton.layer.cornerRadius = 8
-        retryButton.clipsToBounds = true
-        retryButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        retryButton.translatesAutoresizingMaskIntoConstraints = false
-        retryButton.addTarget(self, action: #selector(retryLoading), for: .touchUpInside)
-        
-        // 添加子视图
-        errorView.addSubview(errorIcon)
-        errorView.addSubview(errorLabel)
-        errorView.addSubview(retryButton)
-        
-        // 添加约束
-        NSLayoutConstraint.activate([
-            errorIcon.topAnchor.constraint(equalTo: errorView.topAnchor, constant: 20),
-            errorIcon.centerXAnchor.constraint(equalTo: errorView.centerXAnchor),
-            errorIcon.widthAnchor.constraint(equalToConstant: 60),
-            errorIcon.heightAnchor.constraint(equalToConstant: 60),
-            
-            errorLabel.topAnchor.constraint(equalTo: errorIcon.bottomAnchor, constant: 20),
-            errorLabel.leftAnchor.constraint(equalTo: errorView.leftAnchor, constant: 20),
-            errorLabel.rightAnchor.constraint(equalTo: errorView.rightAnchor, constant: -20),
-            
-            retryButton.topAnchor.constraint(equalTo: errorLabel.bottomAnchor, constant: 20),
-            retryButton.centerXAnchor.constraint(equalTo: errorView.centerXAnchor),
-            retryButton.widthAnchor.constraint(equalToConstant: 100),
-            retryButton.heightAnchor.constraint(equalToConstant: 40),
-            retryButton.bottomAnchor.constraint(equalTo: errorView.bottomAnchor, constant: -20)
-        ])
-        
-        // 添加错误视图到当前视图
-        view.addSubview(errorView)
-        
-        // 添加错误视图约束
-        errorView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview()
-            make.width.equalTo(280)
-            make.height.equalTo(280)
-        }
-    }
+    
     
     /// 重试加载
     @objc private func retryLoading() {
@@ -486,10 +375,9 @@ class StatusBarPlugin: JDBridgeBasePlugin {
     ///   - params: 参数
     ///   - jsBridgeCallback: 回调对象
     /// - Returns: 是否执行成功
-    override func excute(_ action: String!, params: [AnyHashable : Any], callback: JDBridgeCallBack!) -> Bool {
-        
+    override func excute(_ action: String, params: [AnyHashable : Any], callback: JDBridgeCallBack) -> Bool {
         // 确保视图控制器存在
-        guard let viewController = self.viewController else {
+        guard self.viewController != nil else {
             callback.onFail(NSError(domain: "StatusBarPlugin", code: 1000, userInfo: [NSLocalizedDescriptionKey: "视图控制器已释放"]))
             return false
         }
@@ -590,13 +478,10 @@ class StatusBarPlugin: JDBridgeBasePlugin {
             callback.onFail(NSError(domain: "StatusBarPlugin", code: 1000, userInfo: [NSLocalizedDescriptionKey: "视图控制器已释放"]))
             return
         }
-        
         // 获取状态栏高度
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        
         // 获取导航栏高度
         let navigationBarHeight = viewController.navigationController?.navigationBar.frame.height ?? 44.0
-        
         // 构建状态栏信息
         let statusBarInfo: [String: Any] = [
             "success": true,
@@ -607,7 +492,6 @@ class StatusBarPlugin: JDBridgeBasePlugin {
             "screenWidth": UIScreen.main.bounds.width,
             "screenHeight": UIScreen.main.bounds.height
         ]
-        
         // 返回状态栏信息
         callback.onSuccess(statusBarInfo)
     }
@@ -645,3 +529,4 @@ class StatusBarPlugin: JDBridgeBasePlugin {
         callback.onSuccess(screenInfo)
     }
 }
+
