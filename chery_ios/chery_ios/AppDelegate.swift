@@ -18,12 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = .white
         let rootViewController = BaseWebViewController()
         rootViewController.urlString = "https://www.baidu.com"
-        self.window?.rootViewController = rootViewController
+        // 创建UINavigationController并设置rootViewController
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        self.window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true
     }
 
 
-
+    
+    
 }
 

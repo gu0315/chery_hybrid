@@ -6,6 +6,7 @@ target 'chery_ios' do
   pod 'MJExtension'
   pod 'JDHybrid'
   # 离线包方案
+  pod 'TheRouter', '1.1.8'
 end
 
 post_install do

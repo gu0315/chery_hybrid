@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2CE37C1EC246B42996C909D0 /* Pods_chery_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D29CD51527F20D93A2931F8 /* Pods_chery_ios.framework */; };
+		E6B5BFD52E9A1CCB00233959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B5BFCC2E9A1CCB00233959 /* Assets.xcassets */; };
+		E6B5BFD72E9A1CCB00233959 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B5BFD02E9A1CCB00233959 /* LaunchScreen.storyboard */; };
+		E6B5BFD82E9A1CCB00233959 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B5BFD22E9A1CCB00233959 /* Main.storyboard */; };
+		E6B5BFD92E9A1CCB00233959 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFCB2E9A1CCB00233959 /* AppDelegate.swift */; };
+		E6B5BFDA2E9A1CCB00233959 /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFCD2E9A1CCB00233959 /* BaseWebViewController.swift */; };
+		E6B5BFDB2E9A1CCB00233959 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFD32E9A1CCB00233959 /* ViewController.swift */; };
+		E6B5BFDE2E9A1D3C00233959 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFDD2E9A1D3100233959 /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,34 +41,28 @@
 		E621EFCA2E98CF82007013BF /* chery_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chery_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621EFE02E98CF84007013BF /* chery_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chery_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E621EFEA2E98CF84007013BF /* chery_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chery_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6B5BFCB2E9A1CCB00233959 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E6B5BFCC2E9A1CCB00233959 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E6B5BFCD2E9A1CCB00233959 /* BaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
+		E6B5BFCE2E9A1CCB00233959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6B5BFCF2E9A1CCB00233959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E6B5BFD12E9A1CCB00233959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E6B5BFD32E9A1CCB00233959 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E6B5BFDD2E9A1D3100233959 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E621EFF22E98CF84007013BF /* Exceptions for "chery_ios" folder in "chery_ios" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = E621EFC92E98CF82007013BF /* chery_ios */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		E621EFCC2E98CF82007013BF /* chery_ios */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				E621EFF22E98CF84007013BF /* Exceptions for "chery_ios" folder in "chery_ios" target */,
-			);
-			path = chery_ios;
-			sourceTree = "<group>";
-		};
 		E621EFE32E98CF84007013BF /* chery_iosTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = chery_iosTests;
 			sourceTree = "<group>";
 		};
 		E621EFED2E98CF84007013BF /* chery_iosUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = chery_iosUITests;
 			sourceTree = "<group>";
 		};
@@ -96,7 +97,7 @@
 		E621EFC12E98CF82007013BF = {
 			isa = PBXGroup;
 			children = (
-				E621EFCC2E98CF82007013BF /* chery_ios */,
+				E6B5BFD42E9A1CCB00233959 /* chery_ios */,
 				E621EFE32E98CF84007013BF /* chery_iosTests */,
 				E621EFED2E98CF84007013BF /* chery_iosUITests */,
 				E621EFCB2E98CF82007013BF /* Products */,
@@ -113,6 +114,29 @@
 				E621EFEA2E98CF84007013BF /* chery_iosUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E6B5BFD42E9A1CCB00233959 /* chery_ios */ = {
+			isa = PBXGroup;
+			children = (
+				E6B5BFDC2E9A1CEA00233959 /* Common */,
+				E6B5BFCB2E9A1CCB00233959 /* AppDelegate.swift */,
+				E6B5BFCC2E9A1CCB00233959 /* Assets.xcassets */,
+				E6B5BFCD2E9A1CCB00233959 /* BaseWebViewController.swift */,
+				E6B5BFCE2E9A1CCB00233959 /* Info.plist */,
+				E6B5BFD02E9A1CCB00233959 /* LaunchScreen.storyboard */,
+				E6B5BFD22E9A1CCB00233959 /* Main.storyboard */,
+				E6B5BFD32E9A1CCB00233959 /* ViewController.swift */,
+			);
+			path = chery_ios;
+			sourceTree = "<group>";
+		};
+		E6B5BFDC2E9A1CEA00233959 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E6B5BFDD2E9A1D3100233959 /* Const.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		F325649779B6D3DD9FD44EAA /* Pods */ = {
@@ -148,9 +172,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				E621EFCC2E98CF82007013BF /* chery_ios */,
 			);
 			name = chery_ios;
 			productName = chery_ios;
@@ -248,6 +269,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6B5BFD52E9A1CCB00233959 /* Assets.xcassets in Resources */,
+				E6B5BFD72E9A1CCB00233959 /* LaunchScreen.storyboard in Resources */,
+				E6B5BFD82E9A1CCB00233959 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,13 +300,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-chery_ios/Pods-chery_ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-chery_ios/Pods-chery_ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -318,6 +338,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6B5BFD92E9A1CCB00233959 /* AppDelegate.swift in Sources */,
+				E6B5BFDE2E9A1D3C00233959 /* Const.swift in Sources */,
+				E6B5BFDA2E9A1CCB00233959 /* BaseWebViewController.swift in Sources */,
+				E6B5BFDB2E9A1CCB00233959 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +373,25 @@
 			targetProxy = E621EFEB2E98CF84007013BF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E6B5BFD02E9A1CCB00233959 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6B5BFCF2E9A1CCB00233959 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E6B5BFD22E9A1CCB00233959 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6B5BFD12E9A1CCB00233959 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E621EFF42E98CF84007013BF /* Debug */ = {

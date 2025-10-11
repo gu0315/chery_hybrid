@@ -24,8 +24,11 @@ class BaseWebViewController: UIViewController {
     /// 是否隐藏导航栏（默认为false）
     var isNavigationBarHidden: Bool = false {
         didSet {
-            navigationController?.setNavigationBarHidden(isNavigationBarHidden, animated: true)
-            updateWebViewFrame()
+            // 确保在主队列上执行UI更新
+            DispatchQueue.main.async {
+                self.navigationController?.setNavigationBarHidden(self.isNavigationBarHidden, animated: true)
+                self.updateWebViewFrame()
+            }
         }
     }
     
@@ -41,16 +44,6 @@ class BaseWebViewController: UIViewController {
         didSet {
             updateWebViewFrame()
         }
-    }
-    
-    /// 底部安全区高度
-    private var bottomSafeAreaHeight: CGFloat {
-        if #available(iOS 11.0, *) {
-            if let window = UIApplication.shared.keyWindow {
-                return window.safeAreaInsets.bottom
-            }
-        }
-        return 0
     }
     
     // MARK: - 生命周期
@@ -169,32 +162,41 @@ class BaseWebViewController: UIViewController {
     
     /// 更新WebView的Frame
     private func updateWebViewFrame() {
-        // 优化WebView的布局更新
-        UIView.animate(withDuration: 0.3) {
-            self.webView.snp.remakeConstraints { make in
-                if self.isNavigationBarHidden {
-                    // 导航栏隐藏时，WebView从顶部开始
-                    make.top.equalToSuperview()
-                } else {
-                    // 导航栏显示时，WebView从导航栏下方开始
-                    let statusBarHeight = UIApplication.shared.statusBarFrame.height
-                    let navHeight = self.navigationController?.navigationBar.frame.height ?? 0
-                    make.top.equalToSuperview().offset(statusBarHeight + navHeight)
+        // 确保在主队列上执行UI更新
+        DispatchQueue.main.async {
+            // 优化WebView的布局更新
+            UIView.animate(withDuration: 0.3) {
+                self.webView.snp.remakeConstraints { make in
+                    if self.isNavigationBarHidden {
+                        // 导航栏隐藏时，考虑状态栏高度
+                        // 即使导航栏隐藏，也要考虑状态栏的高度，确保内容不被遮挡
+                        if #available(iOS 13.0, *) {
+                            // iOS 13及以上版本使用新的API获取状态栏高度
+                            let windowScene = UIApplication.shared.connectedScenes
+                                .first { $0.activationState == .foregroundActive } as? UIWindowScene
+                            let statusBarHeight = windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+                            make.top.equalToSuperview().offset(statusBarHeight)
+                        } else {
+                            // 旧版本iOS获取状态栏高度
+                            make.top.equalToSuperview().offset(UIApplication.shared.statusBarFrame.height)
+                        }
+                    } else {
+                        // 导航栏显示时，WebView从导航栏下方开始
+                        // 使用Const中的计算方式，确保在任何情况下都能获取正确的高度
+                        make.top.equalToSuperview().offset(Const.navBarHeight)
+                    }
+                    make.left.equalToSuperview()
+                    make.right.equalToSuperview()
+                    // 考虑底部安全区
+                    if self.shouldHandleBottomSafeArea {
+                        make.bottom.equalToSuperview().offset(-Const.bottomSafeHeight)
+                    } else {
+                        make.bottom.equalToSuperview()
+                    }
                 }
-                
-                make.left.equalToSuperview()
-                make.right.equalToSuperview()
-                
-                // 考虑底部安全区
-                if self.shouldHandleBottomSafeArea {
-                    make.bottom.equalToSuperview().offset(-self.bottomSafeAreaHeight)
-                } else {
-                    make.bottom.equalToSuperview()
-                }
+                // 强制布局更新
+                self.view.layoutIfNeeded()
             }
-            
-            // 强制布局更新
-            self.view.layoutIfNeeded()
         }
     }
     
@@ -214,7 +216,7 @@ class BaseWebViewController: UIViewController {
             // 使用UIWindow的方式设置状态栏样式
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                let keyWindow = windowScene.windows.first(where: { $0.isKeyWindow }) {
-                keyWindow.overrideUserInterfaceStyle = isImmersiveStatusBar ? .dark : .light
+               keyWindow.overrideUserInterfaceStyle = isImmersiveStatusBar ? .dark : .light
             }
         } else {
             // iOS 13以下版本使用旧的API
@@ -345,8 +347,6 @@ extension BaseWebViewController: WebViewDelegate {
         decisionHandler(.allow)
     }
     
-    
-    
     /// 重试加载
     @objc private func retryLoading() {
         // 移除所有错误提示视图
@@ -381,29 +381,24 @@ class StatusBarPlugin: JDBridgeBasePlugin {
             callback.onFail(NSError(domain: "StatusBarPlugin", code: 1000, userInfo: [NSLocalizedDescriptionKey: "视图控制器已释放"]))
             return false
         }
-        
         // 根据action执行不同的操作
         switch action {
         case "setImmersiveStatusBar":
             // 设置沉浸式状态栏
             handleSetImmersiveStatusBar(params: params, callback: callback)
             return true
-            
         case "setNavigationBarHidden":
             // 设置导航栏隐藏
             handleSetNavigationBarHidden(params: params, callback: callback)
             return true
-            
         case "getStatusBarInfo":
             // 获取状态栏信息
             handleGetStatusBarInfo(callback: callback)
             return true
-            
         case "getScreenInfo":
             // 获取屏幕信息
             handleGetScreenInfo(callback: callback)
             return true
-            
         default:
             callback.onFail(NSError(domain: "StatusBarPlugin", code: 1001, userInfo: [NSLocalizedDescriptionKey: "unknown"]))
             return false
@@ -502,7 +497,6 @@ class StatusBarPlugin: JDBridgeBasePlugin {
         let screenBounds = UIScreen.main.bounds
         let screenWidth = screenBounds.width
         let screenHeight = screenBounds.height
-        
         // 获取安全区域信息
         var safeAreaInsets = UIEdgeInsets.zero
         if #available(iOS 11.0, *) {
@@ -510,7 +504,6 @@ class StatusBarPlugin: JDBridgeBasePlugin {
                 safeAreaInsets = window.safeAreaInsets
             }
         }
-        
         // 构建屏幕信息
         let screenInfo: [String: Any] = [
             "success": true,
