@@ -1,15 +1,9 @@
 package com.energy.chery_android;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
 
 import com.energy.chery_android.databinding.ActivityMainBinding;
-import com.energy.chery_android.webView.BaseWebView;
-import com.energy.chery_android.webView.BaseWebViewActivity;
+import com.energy.chery_android.QRWebView.BaseWebViewActivity;
 
 public class MainActivity extends BaseWebViewActivity {
     private ActivityMainBinding binding;

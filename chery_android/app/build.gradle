@@ -49,8 +49,8 @@ dependencies {
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
 
-    implementation libs.jdwebview
-    implementation libs.jdbridge
+//    implementation libs.jdwebview
+//    implementation libs.jdbridge
     implementation libs.material.v190
 
     implementation libs.router

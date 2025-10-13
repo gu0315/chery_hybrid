@@ -1,4 +1,4 @@
-package com.energy.chery_android.jsBridge
+package com.energy.chery_android.Plugins
 
 import android.app.Activity
 import android.content.Context
@@ -9,6 +9,7 @@ import android.view.WindowManager
 import com.jd.jdbridge.base.IBridgeCallback
 import com.jd.jdbridge.base.IBridgePlugin
 import com.jd.jdbridge.base.IBridgeWebView
+import org.json.JSONObject
 
 /**
  * 状态栏相关功能插件
@@ -37,13 +38,14 @@ class StatusBarPlugin : IBridgePlugin {
         val statusBarHeightDp = px2dp(context, statusBarHeightPx)
         val navBarHeightDp = px2dp(context, navBarHeightPx)
         val screenHeightDp = px2dp(context, screenHeightPx)
-        val resultMap = mutableMapOf<String, Any>(
+        
+        val paramsMap = mutableMapOf<String, Any>(
             "statusBarHeight" to statusBarHeightDp,
-            "height" to navBarHeightDp,
+            "navBarHeight" to navBarHeightDp,
             "screenHeight" to screenHeightDp
         )
-        callback?.onSuccess(resultMap)
-        Log.d(TAG, "execute: ${resultMap}")
+        val jsonString = JSONObject(paramsMap as Map<*, *>).toString()
+        callback?.onSuccess(jsonString)
         return true
     }
 

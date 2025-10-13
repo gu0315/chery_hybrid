@@ -1,4 +1,4 @@
-package com.energy.chery_android.webView;
+package com.energy.chery_android.QRWebView;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;

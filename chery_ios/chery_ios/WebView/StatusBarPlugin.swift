@@ -58,7 +58,7 @@ import Foundation
     
     /// 获取状态栏信息
     private func handleGetStatusBarInfo(callback: JDBridgeCallBack!) {
-        var dic = ["height": Const.realNavBarHeight, "statusBarHeight": Const.statusBarHeight]
+        var dic = ["navBarHeight": Const.realNavBarHeight, "statusBarHeight": Const.statusBarHeight]
         dic["screenHeight"] = Const.screenHeight
         dic["bottomSafeHeight"] = Const.bottomSafeHeight
         callback.onSuccess(dic)

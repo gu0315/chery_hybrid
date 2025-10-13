@@ -1,4 +1,4 @@
-package com.energy.chery_android.jsBridge
+package com.energy.chery_android.Plugins
 
 import android.util.Log
 import com.jd.hybrid.JDWebView

@@ -1,4 +1,4 @@
-package com.energy.chery_android.webView
+package com.energy.chery_android.QRWebView
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -12,7 +12,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.RelativeLayout
 import androidx.annotation.RequiresApi
-import com.energy.chery_android.jsBridge.RegisterPlugin
+import com.energy.chery_android.Plugins.RegisterPlugin
 import com.jd.hybrid.JDWebView
 
 /**
