@@ -9,6 +9,7 @@ import android.view.WindowManager
 import com.jd.jdbridge.base.IBridgeCallback
 import com.jd.jdbridge.base.IBridgePlugin
 import com.jd.jdbridge.base.IBridgeWebView
+import com.jd.jdcache.util.log
 import org.json.JSONObject
 
 /**
@@ -38,13 +39,14 @@ class StatusBarPlugin : IBridgePlugin {
         val statusBarHeightDp = px2dp(context, statusBarHeightPx)
         val navBarHeightDp = px2dp(context, navBarHeightPx)
         val screenHeightDp = px2dp(context, screenHeightPx)
-        
+
         val paramsMap = mutableMapOf<String, Any>(
             "statusBarHeight" to statusBarHeightDp,
             "navBarHeight" to navBarHeightDp,
             "screenHeight" to screenHeightDp
         )
         val jsonString = JSONObject(paramsMap as Map<*, *>).toString()
+        Log.d(TAG, "execute: ${jsonString}")
         callback?.onSuccess(jsonString)
         return true
     }
