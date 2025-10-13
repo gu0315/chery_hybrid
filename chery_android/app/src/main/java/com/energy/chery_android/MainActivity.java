@@ -12,7 +12,6 @@ import com.energy.chery_android.webView.BaseWebView;
 import com.energy.chery_android.webView.BaseWebViewActivity;
 
 public class MainActivity extends BaseWebViewActivity {
-
     private ActivityMainBinding binding;
 
     @Override

@@ -12,8 +12,8 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.RelativeLayout
 import androidx.annotation.RequiresApi
+import com.energy.chery_android.jsBridge.RegisterPlugin
 import com.jd.hybrid.JDWebView
-import com.jd.jdbridge.base.callJS
 
 /**
  * 基于JDWebView封装的基础WebView组件 - Kotlin版本
@@ -61,6 +61,9 @@ class BaseWebView : RelativeLayout {
         // 创建WebView
         webView = JDWebView(context)
         initWebViewSettings()
+
+        val registerPlugin = RegisterPlugin()
+        registerPlugin.registerAllPlugins(webView)
         // 设置WebView布局参数
         val webViewParams = RelativeLayout.LayoutParams(
             RelativeLayout.LayoutParams.MATCH_PARENT,
