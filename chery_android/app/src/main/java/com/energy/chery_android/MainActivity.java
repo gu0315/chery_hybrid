@@ -26,10 +26,7 @@ public class MainActivity extends BaseWebViewActivity {
         // 设置是否启用沉浸式状态栏
         setImmersiveModeEnabled(false);
         // 加载网页，设置显示导航栏
-        loadUrl("http://192.168.31.137:5173/#/", false);
-        // loadUrl("www.baidu.com", false);
-        // 可以自定义导航栏标题
-        setWebViewNavigationBarTitle("百度首页");
+        loadUrl("http://192.168.31.137:5173/", false);
     }
     
     /**

@@ -12,9 +12,36 @@
 		E6B5BFD72E9A1CCB00233959 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B5BFD02E9A1CCB00233959 /* LaunchScreen.storyboard */; };
 		E6B5BFD82E9A1CCB00233959 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B5BFD22E9A1CCB00233959 /* Main.storyboard */; };
 		E6B5BFD92E9A1CCB00233959 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFCB2E9A1CCB00233959 /* AppDelegate.swift */; };
-		E6B5BFDA2E9A1CCB00233959 /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFCD2E9A1CCB00233959 /* BaseWebViewController.swift */; };
+		E6B5BFDA2E9A1CCB00233959 /* QRWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFCD2E9A1CCB00233959 /* QRWebViewController.swift */; };
 		E6B5BFDB2E9A1CCB00233959 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFD32E9A1CCB00233959 /* ViewController.swift */; };
 		E6B5BFDE2E9A1D3C00233959 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFDD2E9A1D3100233959 /* Const.swift */; };
+		E6B5BFEF2E9A3CC400233959 /* StatusBarPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFEE2E9A3CC400233959 /* StatusBarPlugin.swift */; };
+		E6B5BFF12E9A468600233959 /* jdbridge_demo.html in Resources */ = {isa = PBXBuildFile; fileRef = E6B5BFF02E9A468600233959 /* jdbridge_demo.html */; };
+		E6B5C02B2E9A4CCB00233959 /* _jdbridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFF32E9A4CCB00233959 /* _jdbridge.m */; };
+		E6B5C02C2E9A4CCB00233959 /* JDCacheLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C0052E9A4CCB00233959 /* JDCacheLoader.m */; };
+		E6B5C02D2E9A4CCB00233959 /* JDCachedURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C0012E9A4CCB00233959 /* JDCachedURLResponse.m */; };
+		E6B5C02E2E9A4CCB00233959 /* JDPreloadHtmlMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C0122E9A4CCB00233959 /* JDPreloadHtmlMatcher.m */; };
+		E6B5C02F2E9A4CCB00233959 /* JDResourceMatcherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C0162E9A4CCB00233959 /* JDResourceMatcherManager.m */; };
+		E6B5C0302E9A4CCB00233959 /* JDSafeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C0182E9A4CCB00233959 /* JDSafeArray.m */; };
+		E6B5C0312E9A4CCB00233959 /* JDCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFFF2E9A4CCB00233959 /* JDCache.m */; };
+		E6B5C0322E9A4CCB00233959 /* JDCachePreload.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C0072E9A4CCB00233959 /* JDCachePreload.m */; };
+		E6B5C0332E9A4CCB00233959 /* JDWebViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C0292E9A4CCB00233959 /* JDWebViewContainer.m */; };
+		E6B5C0342E9A4CCB00233959 /* JDBridgeBasePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFF62E9A4CCB00233959 /* JDBridgeBasePlugin.m */; };
+		E6B5C0352E9A4CCB00233959 /* JDSafeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C01A2E9A4CCB00233959 /* JDSafeDictionary.m */; };
+		E6B5C0362E9A4CCB00233959 /* WKWebViewConfiguration+Loader.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C0222E9A4CCB00233959 /* WKWebViewConfiguration+Loader.m */; };
+		E6B5C0372E9A4CCB00233959 /* JDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C01E2E9A4CCB00233959 /* JDUtils.m */; };
+		E6B5C0382E9A4CCB00233959 /* JDCacheJSBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C0032E9A4CCB00233959 /* JDCacheJSBridge.m */; };
+		E6B5C0392E9A4CCB00233959 /* JDBridgePluginUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFFC2E9A4CCB00233959 /* JDBridgePluginUtils.m */; };
+		E6B5C03A2E9A4CCB00233959 /* JDResourceMatcherIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C0142E9A4CCB00233959 /* JDResourceMatcherIterator.m */; };
+		E6B5C03B2E9A4CCB00233959 /* JDNetworkSession.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C0102E9A4CCB00233959 /* JDNetworkSession.m */; };
+		E6B5C03C2E9A4CCB00233959 /* JDBridgeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5BFF92E9A4CCB00233959 /* JDBridgeManager.m */; };
+		E6B5C03D2E9A4CCB00233959 /* JDWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C0202E9A4CCB00233959 /* JDWeakProxy.m */; };
+		E6B5C03E2E9A4CCB00233959 /* JDNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C00A2E9A4CCB00233959 /* JDNetworkManager.m */; };
+		E6B5C03F2E9A4CCB00233959 /* JDURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C01C2E9A4CCB00233959 /* JDURLCache.m */; };
+		E6B5C0402E9A4CCB00233959 /* JDNetworkOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C00C2E9A4CCB00233959 /* JDNetworkOperationQueue.m */; };
+		E6B5C0412E9A4CCB00233959 /* JDNetworkResourceMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B5C00E2E9A4CCB00233959 /* JDNetworkResourceMatcher.m */; };
+		E6B5C0422E9A4CCB00233959 /* hook.js in Resources */ = {isa = PBXBuildFile; fileRef = E6B5C0242E9A4CCB00233959 /* hook.js */; };
+		E6B5C0432E9A4CCB00233959 /* cookie.js in Resources */ = {isa = PBXBuildFile; fileRef = E6B5C0232E9A4CCB00233959 /* cookie.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,26 +70,78 @@
 		E621EFEA2E98CF84007013BF /* chery_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chery_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B5BFCB2E9A1CCB00233959 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6B5BFCC2E9A1CCB00233959 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E6B5BFCD2E9A1CCB00233959 /* BaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
+		E6B5BFCD2E9A1CCB00233959 /* QRWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRWebViewController.swift; sourceTree = "<group>"; };
 		E6B5BFCE2E9A1CCB00233959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6B5BFCF2E9A1CCB00233959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6B5BFD12E9A1CCB00233959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6B5BFD32E9A1CCB00233959 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E6B5BFDD2E9A1D3100233959 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		E6B5BFEE2E9A3CC400233959 /* StatusBarPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarPlugin.swift; sourceTree = "<group>"; };
+		E6B5BFF02E9A468600233959 /* jdbridge_demo.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = jdbridge_demo.html; sourceTree = "<group>"; };
+		E6B5BFF22E9A4CCB00233959 /* _jdbridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _jdbridge.h; sourceTree = "<group>"; };
+		E6B5BFF32E9A4CCB00233959 /* _jdbridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _jdbridge.m; sourceTree = "<group>"; };
+		E6B5BFF42E9A4CCB00233959 /* JDBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDBridge.h; sourceTree = "<group>"; };
+		E6B5BFF52E9A4CCB00233959 /* JDBridgeBasePlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDBridgeBasePlugin.h; sourceTree = "<group>"; };
+		E6B5BFF62E9A4CCB00233959 /* JDBridgeBasePlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDBridgeBasePlugin.m; sourceTree = "<group>"; };
+		E6B5BFF72E9A4CCB00233959 /* JDBridgeBasePluginPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDBridgeBasePluginPrivate.h; sourceTree = "<group>"; };
+		E6B5BFF82E9A4CCB00233959 /* JDBridgeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDBridgeManager.h; sourceTree = "<group>"; };
+		E6B5BFF92E9A4CCB00233959 /* JDBridgeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDBridgeManager.m; sourceTree = "<group>"; };
+		E6B5BFFA2E9A4CCB00233959 /* JDBridgeManagerPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDBridgeManagerPrivate.h; sourceTree = "<group>"; };
+		E6B5BFFB2E9A4CCB00233959 /* JDBridgePluginUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDBridgePluginUtils.h; sourceTree = "<group>"; };
+		E6B5BFFC2E9A4CCB00233959 /* JDBridgePluginUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDBridgePluginUtils.m; sourceTree = "<group>"; };
+		E6B5BFFE2E9A4CCB00233959 /* JDCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDCache.h; sourceTree = "<group>"; };
+		E6B5BFFF2E9A4CCB00233959 /* JDCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDCache.m; sourceTree = "<group>"; };
+		E6B5C0002E9A4CCB00233959 /* JDCachedURLResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDCachedURLResponse.h; sourceTree = "<group>"; };
+		E6B5C0012E9A4CCB00233959 /* JDCachedURLResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDCachedURLResponse.m; sourceTree = "<group>"; };
+		E6B5C0022E9A4CCB00233959 /* JDCacheJSBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDCacheJSBridge.h; sourceTree = "<group>"; };
+		E6B5C0032E9A4CCB00233959 /* JDCacheJSBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDCacheJSBridge.m; sourceTree = "<group>"; };
+		E6B5C0042E9A4CCB00233959 /* JDCacheLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDCacheLoader.h; sourceTree = "<group>"; };
+		E6B5C0052E9A4CCB00233959 /* JDCacheLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDCacheLoader.m; sourceTree = "<group>"; };
+		E6B5C0062E9A4CCB00233959 /* JDCachePreload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDCachePreload.h; sourceTree = "<group>"; };
+		E6B5C0072E9A4CCB00233959 /* JDCachePreload.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDCachePreload.m; sourceTree = "<group>"; };
+		E6B5C0082E9A4CCB00233959 /* JDCacheProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDCacheProtocol.h; sourceTree = "<group>"; };
+		E6B5C0092E9A4CCB00233959 /* JDNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDNetworkManager.h; sourceTree = "<group>"; };
+		E6B5C00A2E9A4CCB00233959 /* JDNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDNetworkManager.m; sourceTree = "<group>"; };
+		E6B5C00B2E9A4CCB00233959 /* JDNetworkOperationQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDNetworkOperationQueue.h; sourceTree = "<group>"; };
+		E6B5C00C2E9A4CCB00233959 /* JDNetworkOperationQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDNetworkOperationQueue.m; sourceTree = "<group>"; };
+		E6B5C00D2E9A4CCB00233959 /* JDNetworkResourceMatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDNetworkResourceMatcher.h; sourceTree = "<group>"; };
+		E6B5C00E2E9A4CCB00233959 /* JDNetworkResourceMatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDNetworkResourceMatcher.m; sourceTree = "<group>"; };
+		E6B5C00F2E9A4CCB00233959 /* JDNetworkSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDNetworkSession.h; sourceTree = "<group>"; };
+		E6B5C0102E9A4CCB00233959 /* JDNetworkSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDNetworkSession.m; sourceTree = "<group>"; };
+		E6B5C0112E9A4CCB00233959 /* JDPreloadHtmlMatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDPreloadHtmlMatcher.h; sourceTree = "<group>"; };
+		E6B5C0122E9A4CCB00233959 /* JDPreloadHtmlMatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDPreloadHtmlMatcher.m; sourceTree = "<group>"; };
+		E6B5C0132E9A4CCB00233959 /* JDResourceMatcherIterator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDResourceMatcherIterator.h; sourceTree = "<group>"; };
+		E6B5C0142E9A4CCB00233959 /* JDResourceMatcherIterator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDResourceMatcherIterator.m; sourceTree = "<group>"; };
+		E6B5C0152E9A4CCB00233959 /* JDResourceMatcherManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDResourceMatcherManager.h; sourceTree = "<group>"; };
+		E6B5C0162E9A4CCB00233959 /* JDResourceMatcherManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDResourceMatcherManager.m; sourceTree = "<group>"; };
+		E6B5C0172E9A4CCB00233959 /* JDSafeArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDSafeArray.h; sourceTree = "<group>"; };
+		E6B5C0182E9A4CCB00233959 /* JDSafeArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDSafeArray.m; sourceTree = "<group>"; };
+		E6B5C0192E9A4CCB00233959 /* JDSafeDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDSafeDictionary.h; sourceTree = "<group>"; };
+		E6B5C01A2E9A4CCB00233959 /* JDSafeDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDSafeDictionary.m; sourceTree = "<group>"; };
+		E6B5C01B2E9A4CCB00233959 /* JDURLCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDURLCache.h; sourceTree = "<group>"; };
+		E6B5C01C2E9A4CCB00233959 /* JDURLCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDURLCache.m; sourceTree = "<group>"; };
+		E6B5C01D2E9A4CCB00233959 /* JDUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDUtils.h; sourceTree = "<group>"; };
+		E6B5C01E2E9A4CCB00233959 /* JDUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDUtils.m; sourceTree = "<group>"; };
+		E6B5C01F2E9A4CCB00233959 /* JDWeakProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDWeakProxy.h; sourceTree = "<group>"; };
+		E6B5C0202E9A4CCB00233959 /* JDWeakProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDWeakProxy.m; sourceTree = "<group>"; };
+		E6B5C0212E9A4CCB00233959 /* WKWebViewConfiguration+Loader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKWebViewConfiguration+Loader.h"; sourceTree = "<group>"; };
+		E6B5C0222E9A4CCB00233959 /* WKWebViewConfiguration+Loader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WKWebViewConfiguration+Loader.m"; sourceTree = "<group>"; };
+		E6B5C0232E9A4CCB00233959 /* cookie.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = cookie.js; sourceTree = "<group>"; };
+		E6B5C0242E9A4CCB00233959 /* hook.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = hook.js; sourceTree = "<group>"; };
+		E6B5C0272E9A4CCB00233959 /* JDWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDWebView.h; sourceTree = "<group>"; };
+		E6B5C0282E9A4CCB00233959 /* JDWebViewContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDWebViewContainer.h; sourceTree = "<group>"; };
+		E6B5C0292E9A4CCB00233959 /* JDWebViewContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDWebViewContainer.m; sourceTree = "<group>"; };
+		E6B5C0532E9A4E4C00233959 /* chery_ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chery_ios-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E621EFE32E98CF84007013BF /* chery_iosTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = chery_iosTests;
 			sourceTree = "<group>";
 		};
 		E621EFED2E98CF84007013BF /* chery_iosUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = chery_iosUITests;
 			sourceTree = "<group>";
 		};
@@ -119,14 +198,18 @@
 		E6B5BFD42E9A1CCB00233959 /* chery_ios */ = {
 			isa = PBXGroup;
 			children = (
+				E6B5BFFD2E9A4CCB00233959 /* JDBridge */,
+				E6B5C0262E9A4CCB00233959 /* JDCache */,
+				E6B5C02A2E9A4CCB00233959 /* JDWebView */,
+				E6B5BFEB2E9A388A00233959 /* WebView */,
 				E6B5BFDC2E9A1CEA00233959 /* Common */,
 				E6B5BFCB2E9A1CCB00233959 /* AppDelegate.swift */,
 				E6B5BFCC2E9A1CCB00233959 /* Assets.xcassets */,
-				E6B5BFCD2E9A1CCB00233959 /* BaseWebViewController.swift */,
 				E6B5BFCE2E9A1CCB00233959 /* Info.plist */,
 				E6B5BFD02E9A1CCB00233959 /* LaunchScreen.storyboard */,
 				E6B5BFD22E9A1CCB00233959 /* Main.storyboard */,
 				E6B5BFD32E9A1CCB00233959 /* ViewController.swift */,
+				E6B5C0532E9A4E4C00233959 /* chery_ios-Bridging-Header.h */,
 			);
 			path = chery_ios;
 			sourceTree = "<group>";
@@ -137,6 +220,98 @@
 				E6B5BFDD2E9A1D3100233959 /* Const.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		E6B5BFEB2E9A388A00233959 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				E6B5BFF02E9A468600233959 /* jdbridge_demo.html */,
+				E6B5BFCD2E9A1CCB00233959 /* QRWebViewController.swift */,
+				E6B5BFEE2E9A3CC400233959 /* StatusBarPlugin.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		E6B5BFFD2E9A4CCB00233959 /* JDBridge */ = {
+			isa = PBXGroup;
+			children = (
+				E6B5BFF22E9A4CCB00233959 /* _jdbridge.h */,
+				E6B5BFF32E9A4CCB00233959 /* _jdbridge.m */,
+				E6B5BFF42E9A4CCB00233959 /* JDBridge.h */,
+				E6B5BFF52E9A4CCB00233959 /* JDBridgeBasePlugin.h */,
+				E6B5BFF62E9A4CCB00233959 /* JDBridgeBasePlugin.m */,
+				E6B5BFF72E9A4CCB00233959 /* JDBridgeBasePluginPrivate.h */,
+				E6B5BFF82E9A4CCB00233959 /* JDBridgeManager.h */,
+				E6B5BFF92E9A4CCB00233959 /* JDBridgeManager.m */,
+				E6B5BFFA2E9A4CCB00233959 /* JDBridgeManagerPrivate.h */,
+				E6B5BFFB2E9A4CCB00233959 /* JDBridgePluginUtils.h */,
+				E6B5BFFC2E9A4CCB00233959 /* JDBridgePluginUtils.m */,
+			);
+			name = JDBridge;
+			sourceTree = "<group>";
+		};
+		E6B5C0252E9A4CCB00233959 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E6B5C0232E9A4CCB00233959 /* cookie.js */,
+				E6B5C0242E9A4CCB00233959 /* hook.js */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E6B5C0262E9A4CCB00233959 /* JDCache */ = {
+			isa = PBXGroup;
+			children = (
+				E6B5BFFE2E9A4CCB00233959 /* JDCache.h */,
+				E6B5BFFF2E9A4CCB00233959 /* JDCache.m */,
+				E6B5C0002E9A4CCB00233959 /* JDCachedURLResponse.h */,
+				E6B5C0012E9A4CCB00233959 /* JDCachedURLResponse.m */,
+				E6B5C0022E9A4CCB00233959 /* JDCacheJSBridge.h */,
+				E6B5C0032E9A4CCB00233959 /* JDCacheJSBridge.m */,
+				E6B5C0042E9A4CCB00233959 /* JDCacheLoader.h */,
+				E6B5C0052E9A4CCB00233959 /* JDCacheLoader.m */,
+				E6B5C0062E9A4CCB00233959 /* JDCachePreload.h */,
+				E6B5C0072E9A4CCB00233959 /* JDCachePreload.m */,
+				E6B5C0082E9A4CCB00233959 /* JDCacheProtocol.h */,
+				E6B5C0092E9A4CCB00233959 /* JDNetworkManager.h */,
+				E6B5C00A2E9A4CCB00233959 /* JDNetworkManager.m */,
+				E6B5C00B2E9A4CCB00233959 /* JDNetworkOperationQueue.h */,
+				E6B5C00C2E9A4CCB00233959 /* JDNetworkOperationQueue.m */,
+				E6B5C00D2E9A4CCB00233959 /* JDNetworkResourceMatcher.h */,
+				E6B5C00E2E9A4CCB00233959 /* JDNetworkResourceMatcher.m */,
+				E6B5C00F2E9A4CCB00233959 /* JDNetworkSession.h */,
+				E6B5C0102E9A4CCB00233959 /* JDNetworkSession.m */,
+				E6B5C0112E9A4CCB00233959 /* JDPreloadHtmlMatcher.h */,
+				E6B5C0122E9A4CCB00233959 /* JDPreloadHtmlMatcher.m */,
+				E6B5C0132E9A4CCB00233959 /* JDResourceMatcherIterator.h */,
+				E6B5C0142E9A4CCB00233959 /* JDResourceMatcherIterator.m */,
+				E6B5C0152E9A4CCB00233959 /* JDResourceMatcherManager.h */,
+				E6B5C0162E9A4CCB00233959 /* JDResourceMatcherManager.m */,
+				E6B5C0172E9A4CCB00233959 /* JDSafeArray.h */,
+				E6B5C0182E9A4CCB00233959 /* JDSafeArray.m */,
+				E6B5C0192E9A4CCB00233959 /* JDSafeDictionary.h */,
+				E6B5C01A2E9A4CCB00233959 /* JDSafeDictionary.m */,
+				E6B5C01B2E9A4CCB00233959 /* JDURLCache.h */,
+				E6B5C01C2E9A4CCB00233959 /* JDURLCache.m */,
+				E6B5C01D2E9A4CCB00233959 /* JDUtils.h */,
+				E6B5C01E2E9A4CCB00233959 /* JDUtils.m */,
+				E6B5C01F2E9A4CCB00233959 /* JDWeakProxy.h */,
+				E6B5C0202E9A4CCB00233959 /* JDWeakProxy.m */,
+				E6B5C0212E9A4CCB00233959 /* WKWebViewConfiguration+Loader.h */,
+				E6B5C0222E9A4CCB00233959 /* WKWebViewConfiguration+Loader.m */,
+				E6B5C0252E9A4CCB00233959 /* Resources */,
+			);
+			name = JDCache;
+			sourceTree = "<group>";
+		};
+		E6B5C02A2E9A4CCB00233959 /* JDWebView */ = {
+			isa = PBXGroup;
+			children = (
+				E6B5C0272E9A4CCB00233959 /* JDWebView.h */,
+				E6B5C0282E9A4CCB00233959 /* JDWebViewContainer.h */,
+				E6B5C0292E9A4CCB00233959 /* JDWebViewContainer.m */,
+			);
+			name = JDWebView;
 			sourceTree = "<group>";
 		};
 		F325649779B6D3DD9FD44EAA /* Pods */ = {
@@ -270,6 +445,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6B5BFD52E9A1CCB00233959 /* Assets.xcassets in Resources */,
+				E6B5BFF12E9A468600233959 /* jdbridge_demo.html in Resources */,
+				E6B5C0422E9A4CCB00233959 /* hook.js in Resources */,
+				E6B5C0432E9A4CCB00233959 /* cookie.js in Resources */,
 				E6B5BFD72E9A1CCB00233959 /* LaunchScreen.storyboard in Resources */,
 				E6B5BFD82E9A1CCB00233959 /* Main.storyboard in Resources */,
 			);
@@ -300,9 +478,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-chery_ios/Pods-chery_ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-chery_ios/Pods-chery_ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -340,8 +522,32 @@
 			files = (
 				E6B5BFD92E9A1CCB00233959 /* AppDelegate.swift in Sources */,
 				E6B5BFDE2E9A1D3C00233959 /* Const.swift in Sources */,
-				E6B5BFDA2E9A1CCB00233959 /* BaseWebViewController.swift in Sources */,
+				E6B5C02B2E9A4CCB00233959 /* _jdbridge.m in Sources */,
+				E6B5C02C2E9A4CCB00233959 /* JDCacheLoader.m in Sources */,
+				E6B5C02D2E9A4CCB00233959 /* JDCachedURLResponse.m in Sources */,
+				E6B5C02E2E9A4CCB00233959 /* JDPreloadHtmlMatcher.m in Sources */,
+				E6B5C02F2E9A4CCB00233959 /* JDResourceMatcherManager.m in Sources */,
+				E6B5C0302E9A4CCB00233959 /* JDSafeArray.m in Sources */,
+				E6B5C0312E9A4CCB00233959 /* JDCache.m in Sources */,
+				E6B5C0322E9A4CCB00233959 /* JDCachePreload.m in Sources */,
+				E6B5C0332E9A4CCB00233959 /* JDWebViewContainer.m in Sources */,
+				E6B5C0342E9A4CCB00233959 /* JDBridgeBasePlugin.m in Sources */,
+				E6B5C0352E9A4CCB00233959 /* JDSafeDictionary.m in Sources */,
+				E6B5C0362E9A4CCB00233959 /* WKWebViewConfiguration+Loader.m in Sources */,
+				E6B5C0372E9A4CCB00233959 /* JDUtils.m in Sources */,
+				E6B5C0382E9A4CCB00233959 /* JDCacheJSBridge.m in Sources */,
+				E6B5C0392E9A4CCB00233959 /* JDBridgePluginUtils.m in Sources */,
+				E6B5C03A2E9A4CCB00233959 /* JDResourceMatcherIterator.m in Sources */,
+				E6B5C03B2E9A4CCB00233959 /* JDNetworkSession.m in Sources */,
+				E6B5C03C2E9A4CCB00233959 /* JDBridgeManager.m in Sources */,
+				E6B5C03D2E9A4CCB00233959 /* JDWeakProxy.m in Sources */,
+				E6B5C03E2E9A4CCB00233959 /* JDNetworkManager.m in Sources */,
+				E6B5C03F2E9A4CCB00233959 /* JDURLCache.m in Sources */,
+				E6B5C0402E9A4CCB00233959 /* JDNetworkOperationQueue.m in Sources */,
+				E6B5C0412E9A4CCB00233959 /* JDNetworkResourceMatcher.m in Sources */,
+				E6B5BFDA2E9A1CCB00233959 /* QRWebViewController.swift in Sources */,
 				E6B5BFDB2E9A1CCB00233959 /* ViewController.swift in Sources */,
+				E6B5BFEF2E9A3CC400233959 /* StatusBarPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +626,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.energy.chery.chery-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/guqianxiang/Desktop/奇瑞绿能/Hybrid容器/chery_ios/chery_ios/chery_ios-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -451,6 +658,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.energy.chery.chery-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/guqianxiang/Desktop/奇瑞绿能/Hybrid容器/chery_ios/chery_ios/chery_ios-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

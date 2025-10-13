@@ -1,5 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-chery_ios/Pods-chery_ios-frameworks.sh
-${BUILT_PRODUCTS_DIR}/JDHybrid/JDHybrid.framework
 ${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework

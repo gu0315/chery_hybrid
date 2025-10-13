@@ -112,7 +112,14 @@ static NSString *KJDBridgeInnerMethod = @"window.JDBridge && window.JDBridge._ha
     JDBridgeBasePlugin *plugin = self.jdBridgePluginMap[pluginName];
     if (!plugin) {//first call bridge
         plugin = [[NSClassFromString(pluginName) alloc] init];
-        
+        // fix 未考虑swift
+        if (plugin == nil) {
+            NSString *moduleName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
+            NSString *fullClassName = [NSString stringWithFormat:@"%@.%@", moduleName, pluginName];
+            Class cls = NSClassFromString(fullClassName);
+            plugin = [[cls alloc] init];
+        }
+    
         // no plugin named "pluginName"
         if (!plugin || ![plugin isKindOfClass:[JDBridgeBasePlugin class]]) {
             // when met invalid plugin, then we set default plugin here! make sure user setting first
