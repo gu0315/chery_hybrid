@@ -1,5 +1,6 @@
 package com.energy.chery_android;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.energy.chery_android.databinding.ActivityMainBinding;
@@ -14,12 +15,16 @@ public class MainActivity extends BaseWebViewActivity {
         // 使用ViewBinding初始化布局
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        
+        // 启用沉浸式状态栏，透明背景，深色文字（黑色）
+        setImmersiveStatusBar(true, Color.TRANSPARENT, false);
+        
         // 初始化BaseWebView，传入容器ID
         initBaseWebView(R.id.webview_container);
         // 设置是否启用沉浸式状态栏
-        setWebViewNavigationBarVisible(false);
+        setWebViewNavigationBarVisible(true);
         // 加载网页，设置显示导航栏
-        loadUrl("http://192.168.31.137:5173/", false);
+        loadUrl("http://192.168.5.43:5173/", false);
     }
     
     /**

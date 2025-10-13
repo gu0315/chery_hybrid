@@ -1,11 +1,15 @@
 package com.energy.chery_android.QRWebView;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
@@ -249,67 +253,183 @@ public class BaseWebViewActivity extends AppCompatActivity {
     }
 
     /**
-     * 启用沉浸式状态栏（显示状态栏时间和内容，同时保持透明效果）
+     * 启用沉浸式状态栏（只让状态栏透明，保持底部导航栏正常）
      */
     private void enableImmersiveStatusBar() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            // Android 11及以上版本
-            getWindow().setDecorFitsSystemWindows(false);
-            WindowInsetsController insetsController = getWindow().getInsetsController();
-            if (insetsController != null) {
-                // 显示状态栏但设置为透明
-                insetsController.show(WindowInsets.Type.statusBars());
-                insetsController.setSystemBarsAppearance(
-                        WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS, // 浅色状态栏文字
-                        WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Android 5.0及以上版本 - 使用标准方法
+            Window window = getWindow();
+            
+            // 清除透明状态栏标志
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            // 添加绘制系统栏背景标志
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            
+            // 设置状态栏为透明
+            window.setStatusBarColor(Color.TRANSPARENT);
+            
+            // 设置系统UI可见性，让内容延伸到状态栏
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                // Android 6.0及以上版本
+                window.getDecorView().setSystemUiVisibility(
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | 
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
+                        View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR  // 设置状态栏文字为深色（黑色）
                 );
-                insetsController.setSystemBarsBehavior(WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
             }
-            // 设置状态栏颜色为透明
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            // Android 6.0到Android 10版本
-            // 设置状态栏文字为浅色以确保可见性
-            getWindow().getDecorView().setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
-                            View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR // 浅色状态栏文字
-            );
-            // 设置状态栏颜色为透明
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
         } else {
-            // Android 4.4到Android 5.1版本
+            // Android 4.4到Android 4.4版本
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
+        
+        // 确保布局适配沉浸式状态栏
+        adjustLayoutForImmersiveMode();
     }
 
     /**
      * 禁用沉浸式状态栏，恢复默认状态
      */
     private void disableImmersiveStatusBar() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            // Android 11及以上版本
-            getWindow().setDecorFitsSystemWindows(true);
-            WindowInsetsController insetsController = getWindow().getInsetsController();
-            if (insetsController != null) {
-                insetsController.setSystemBarsAppearance(0, WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS);
-            }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Android 5.0及以上版本
+            Window window = getWindow();
+            
+            // 恢复系统UI可见性
+            window.getDecorView().setSystemUiVisibility(0);
+            
             // 恢复状态栏颜色为应用主题颜色
-            getWindow().setStatusBarColor(Color.WHITE);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            // Android 6.0到Android 10版本
-            getWindow().getDecorView().setSystemUiVisibility(0);
-            // 恢复状态栏颜色为应用主题颜色
-            getWindow().setStatusBarColor(Color.WHITE);
+            window.setStatusBarColor(Color.WHITE);
+            
+            // 不设置底部导航栏颜色，保持系统默认
         } else {
-            // Android 4.4到Android 5.1版本
+            // Android 4.4到Android 4.4版本
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-            // 恢复状态栏颜色为应用主题颜色
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                getWindow().setStatusBarColor(Color.WHITE);
+        }
+        
+        // 恢复布局适配
+        adjustLayoutForNormalMode();
+    }
+    
+    /**
+     * 调整布局以适配沉浸式模式
+     */
+    private void adjustLayoutForImmersiveMode() {
+        // 沉浸式模式下，布局应该从状态栏开始，不需要添加状态栏高度的边距
+        // 调整导航栏位置 - 从状态栏开始
+        if (navigationBar != null) {
+            FrameLayout.LayoutParams navParams = (FrameLayout.LayoutParams) navigationBar.getLayoutParams();
+            if (navParams != null) {
+                navParams.topMargin = 0; // 沉浸式模式下从顶部开始
+                navigationBar.requestLayout();
             }
         }
+        
+        // 调整WebView位置 - 从状态栏开始，延伸到底部
+        if (baseWebView != null && baseWebView.getParent() instanceof FrameLayout) {
+            FrameLayout container = (FrameLayout) baseWebView.getParent();
+            FrameLayout.LayoutParams webViewParams = (FrameLayout.LayoutParams) baseWebView.getLayoutParams();
+            if (webViewParams != null) {
+                // 沉浸式模式下，WebView从状态栏开始，如果导航栏可见则从导航栏下方开始
+                int topMargin = isNavigationBarVisible ? dpToPx(48) : 0;
+                webViewParams.topMargin = topMargin;
+                
+                // 移除底部边距，让WebView延伸到底部
+                webViewParams.bottomMargin = 0;
+                
+                baseWebView.requestLayout();
+            }
+        }
+        
+        // 更新UserAgent中的状态栏高度信息
+        updateUserAgentWithStatusBarHeight();
+    }
+    
+    /**
+     * 更新UserAgent中的状态栏高度信息
+     */
+    private void updateUserAgentWithStatusBarHeight() {
+        if (baseWebView != null && baseWebView.getWebView() != null) {
+            // 获取原始UserAgent
+            String originalUserAgent = baseWebView.getWebView().getSettings().getUserAgentString();
+            // 获取状态栏高度（像素）
+            int statusBarHeight = getStatusBarHeightPx();
+            // 导航栏高度（像素）
+            int navigationBarHeight = 48;
+            // 构建包含状态栏和导航栏高度信息的新UserAgent
+            String customUserAgent = originalUserAgent + " StatusBarHeight/" + statusBarHeight + " NavigationBarHeight/" + navigationBarHeight + " ImmersiveMode/" + (isImmersiveModeEnabled ? "true" : "false");
+            Log.d("BaseWebViewActivity", "Updated UserAgent: " + customUserAgent);
+            // 设置自定义UserAgent
+            baseWebView.getWebView().getSettings().setUserAgentString(customUserAgent);
+        }
+    }
+    
+    /**
+     * 调整布局以适配普通模式
+     */
+    private void adjustLayoutForNormalMode() {
+        // 普通模式下，布局从状态栏下方开始
+        int statusBarHeight = getStatusBarHeightPx();
+        
+        // 调整导航栏位置 - 从状态栏下方开始
+        if (navigationBar != null) {
+            FrameLayout.LayoutParams navParams = (FrameLayout.LayoutParams) navigationBar.getLayoutParams();
+            if (navParams != null) {
+                navParams.topMargin = statusBarHeight;
+                navigationBar.requestLayout();
+            }
+        }
+        
+        // 调整WebView位置 - 从状态栏下方开始，延伸到底部
+        if (baseWebView != null && baseWebView.getParent() instanceof FrameLayout) {
+            FrameLayout container = (FrameLayout) baseWebView.getParent();
+            FrameLayout.LayoutParams webViewParams = (FrameLayout.LayoutParams) baseWebView.getLayoutParams();
+            if (webViewParams != null) {
+                int topMargin = isNavigationBarVisible ? statusBarHeight + dpToPx(48) : statusBarHeight;
+                webViewParams.topMargin = topMargin;
+                
+                // 移除底部边距，让WebView延伸到底部
+                webViewParams.bottomMargin = 0;
+                
+                baseWebView.requestLayout();
+            }
+        }
+        
+        // 更新UserAgent中的状态栏高度信息
+        updateUserAgentWithStatusBarHeight();
+    }
+    
+    /**
+     * 获取状态栏高度（像素）
+     * @return 状态栏高度（像素值）
+     */
+    private int getStatusBarHeightPx() {
+        int statusBarHeightPx = 0;
+        @SuppressLint("InternalInsetResource") int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            statusBarHeightPx = getResources().getDimensionPixelSize(resourceId);
+        }
+        // 若获取失败，使用默认值 24dp 转 px
+        if (statusBarHeightPx == 0) {
+            statusBarHeightPx = dpToPx(24);
+        }
+        return statusBarHeightPx;
+    }
+    
+    /**
+     * 获取导航栏高度（像素）
+     * @return 导航栏高度（像素值）
+     */
+    private int getNavigationBarHeight() {
+        int navigationBarHeightPx = 0;
+        @SuppressLint("InternalInsetResource") int resourceId = getResources().getIdentifier("navigation_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            navigationBarHeightPx = getResources().getDimensionPixelSize(resourceId);
+        }
+        // 若获取失败，使用默认值 48dp 转 px
+        if (navigationBarHeightPx == 0) {
+            navigationBarHeightPx = dpToPx(48);
+        }
+        return navigationBarHeightPx;
     }
 
     /**
@@ -391,6 +511,170 @@ public class BaseWebViewActivity extends AppCompatActivity {
         if (titleView != null) {
             titleView.setTextColor(color);
         }
+    }
+    
+    /**
+     * 设置状态栏颜色
+     * @param color 状态栏颜色
+     */
+    protected void setStatusBarColor(int color) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(color);
+        }
+    }
+    
+    /**
+     * 设置状态栏文字颜色（浅色或深色）
+     * @param isLight 是否为浅色文字（true为浅色，false为深色）
+     */
+    protected void setStatusBarTextColor(boolean isLight) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            // Android 11及以上版本
+            WindowInsetsController insetsController = getWindow().getInsetsController();
+            if (insetsController != null) {
+                if (isLight) {
+                    // 浅色文字（白色）- 用于深色背景
+                    insetsController.setSystemBarsAppearance(
+                            WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
+                            WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+                    );
+                } else {
+                    // 深色文字（黑色）- 用于浅色背景
+                    insetsController.setSystemBarsAppearance(
+                            0,
+                            WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+                    );
+                }
+            }
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            // Android 6.0到Android 10版本
+            int flags = getWindow().getDecorView().getSystemUiVisibility();
+            if (isLight) {
+                // 浅色文字（白色）- 用于深色背景
+                flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            } else {
+                // 深色文字（黑色）- 用于浅色背景
+                flags &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            }
+            getWindow().getDecorView().setSystemUiVisibility(flags);
+        }
+    }
+    
+    /**
+     * 设置沉浸式状态栏并指定颜色和文字颜色
+     * @param enabled 是否启用沉浸式模式
+     * @param statusBarColor 状态栏颜色
+     * @param isLightText 状态栏文字是否为浅色
+     */
+    protected void setImmersiveStatusBar(boolean enabled, int statusBarColor, boolean isLightText) {
+        isImmersiveModeEnabled = enabled;
+        if (enabled) {
+            // 先设置状态栏颜色和文字颜色
+            setStatusBarColor(statusBarColor);
+            setStatusBarTextColor(isLightText);
+            // 然后启用沉浸式状态栏
+            enableImmersiveStatusBar();
+        } else {
+            disableImmersiveStatusBar();
+        }
+    }
+    
+    /**
+     * 获取当前沉浸式模式状态
+     * @return true表示沉浸式模式已启用
+     */
+    protected boolean isImmersiveModeEnabled() {
+        return isImmersiveModeEnabled;
+    }
+    
+    /**
+     * 带动画效果的沉浸式状态栏切换
+     * @param enabled 是否启用沉浸式模式
+     * @param statusBarColor 状态栏颜色
+     * @param isLightText 状态栏文字是否为浅色
+     * @param duration 动画持续时间（毫秒）
+     */
+    protected void setImmersiveStatusBarWithAnimation(boolean enabled, int statusBarColor, boolean isLightText, long duration) {
+        if (enabled == isImmersiveModeEnabled) {
+            return; // 状态相同，无需切换
+        }
+        
+        // 获取当前状态栏高度
+        int currentStatusBarHeight = isImmersiveModeEnabled ? getStatusBarHeightPx() : 0;
+        int targetStatusBarHeight = enabled ? getStatusBarHeightPx() : 0;
+        
+        // 创建动画
+        ValueAnimator animator = ValueAnimator.ofInt(currentStatusBarHeight, targetStatusBarHeight);
+        animator.setDuration(duration);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int animatedValue = (int) animation.getAnimatedValue();
+                updateLayoutMargins(animatedValue);
+            }
+        });
+        
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                // 动画开始时设置状态栏
+                if (enabled) {
+                    enableImmersiveStatusBar();
+                    setStatusBarColor(statusBarColor);
+                    setStatusBarTextColor(isLightText);
+                } else {
+                    disableImmersiveStatusBar();
+                }
+            }
+            
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                // 动画结束时更新状态
+                isImmersiveModeEnabled = enabled;
+                updateUserAgentWithStatusBarHeight();
+            }
+        });
+        
+        animator.start();
+    }
+    
+    /**
+     * 更新布局边距
+     * @param statusBarHeight 状态栏高度
+     */
+    private void updateLayoutMargins(int statusBarHeight) {
+        // 调整导航栏位置
+        if (navigationBar != null) {
+            FrameLayout.LayoutParams navParams = (FrameLayout.LayoutParams) navigationBar.getLayoutParams();
+            if (navParams != null) {
+                // 如果状态栏高度为0，说明是沉浸式模式，从顶部开始
+                // 如果状态栏高度大于0，说明是普通模式，从状态栏下方开始
+                navParams.topMargin = statusBarHeight;
+                navigationBar.requestLayout();
+            }
+        }
+        
+        // 调整WebView位置
+        if (baseWebView != null && baseWebView.getParent() instanceof FrameLayout) {
+            FrameLayout.LayoutParams webViewParams = (FrameLayout.LayoutParams) baseWebView.getLayoutParams();
+            if (webViewParams != null) {
+                int topMargin = isNavigationBarVisible ? statusBarHeight + dpToPx(48) : statusBarHeight;
+                webViewParams.topMargin = topMargin;
+                // 确保WebView延伸到底部
+                webViewParams.bottomMargin = 0;
+                baseWebView.requestLayout();
+            }
+        }
+    }
+    
+    /**
+     * 带动画效果的沉浸式状态栏切换（使用默认动画时间）
+     * @param enabled 是否启用沉浸式模式
+     * @param statusBarColor 状态栏颜色
+     * @param isLightText 状态栏文字是否为浅色
+     */
+    protected void setImmersiveStatusBarWithAnimation(boolean enabled, int statusBarColor, boolean isLightText) {
+        setImmersiveStatusBarWithAnimation(enabled, statusBarColor, isLightText, 300); // 默认300ms动画
     }
 
     @Override
