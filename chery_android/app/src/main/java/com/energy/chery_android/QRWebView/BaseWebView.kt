@@ -173,6 +173,13 @@ class BaseWebView : RelativeLayout {
     }
 
     /**
+     * 重新加载当前页面
+     */
+    fun reload() {
+        webView?.reload()
+    }
+
+    /**
      * 销毁WebView
      */
     fun destroy() {
