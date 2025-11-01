@@ -1,30 +1,38 @@
 PODS:
+  - lottie-ios (4.5.2)
   - MJExtension (3.4.2)
   - SDWebImage (5.21.2):
     - SDWebImage/Core (= 5.21.2)
   - SDWebImage/Core (5.21.2)
+  - SkeletonView (1.30.4)
   - SnapKit (5.7.1)
   - TheRouter (1.1.8)
 
 DEPENDENCIES:
+  - lottie-ios
   - MJExtension
   - SDWebImage
+  - SkeletonView
   - SnapKit
   - TheRouter (= 1.1.8)
 
 SPEC REPOS:
   trunk:
+    - lottie-ios
     - MJExtension
     - SDWebImage
+    - SkeletonView
     - SnapKit
     - TheRouter
 
 SPEC CHECKSUMS:
+  lottie-ios: 96784afc26ea031d3e2b6cae342a4b8915072489
   MJExtension: e97d164cb411aa9795cf576093a1fa208b4a8dd8
   SDWebImage: 9f177d83116802728e122410fb25ad88f5c7608a
+  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   TheRouter: 1c7801e4f3df9a2598088d7c3cf4d2f6d3779c51
 
-PODFILE CHECKSUM: 615948f5274f57fbe383182d3c38c9adb319bfb9
+PODFILE CHECKSUM: 460ca6b8643435e1f428828f92b7d3dddd69a99e
 
 COCOAPODS: 1.16.2

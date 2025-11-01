@@ -45,20 +45,48 @@ import Foundation
     
     /// 设置沉浸式状态栏
     private func handleSetImmersiveStatusBar(params: [AnyHashable : Any]!, callback: JDBridgeCallBack!) {
-       
+        guard let immersive = params["immersive"] as? Bool else {
+            callback.onFail(NSError(domain: "StatusBarPlugin", code: 1002, userInfo: [NSLocalizedDescriptionKey: "缺少immersive参数"]))
+            return
+        }
         
-        
+        DispatchQueue.main.async {
+            // 通知WebView控制器更新状态栏样式
+            NotificationCenter.default.post(
+                name: NSNotification.Name("UpdateImmersiveStatusBar"),
+                object: nil,
+                userInfo: ["immersive": immersive]
+            )
+            
+            callback.onSuccess(["success": true, "immersive": immersive])
+        }
     }
     
     /// 设置导航栏隐藏
     private func handleSetNavigationBarHidden(params: [AnyHashable : Any]!, callback: JDBridgeCallBack!) {
-    
-       
+        guard let hidden = params["hidden"] as? Bool else {
+            callback.onFail(NSError(domain: "StatusBarPlugin", code: 1003, userInfo: [NSLocalizedDescriptionKey: "缺少hidden参数"]))
+            return
+        }
+        
+        let animated = params["animated"] as? Bool ?? true
+        
+        DispatchQueue.main.async {
+            // 通知WebView控制器更新导航栏状态
+            NotificationCenter.default.post(
+                name: NSNotification.Name("UpdateNavigationBarHidden"),
+                object: nil,
+                userInfo: ["hidden": hidden, "animated": animated]
+            )
+            callback.onSuccess(["success": true, "hidden": hidden])
+        }
     }
     
     /// 获取状态栏信息
     private func handleGetStatusBarInfo(callback: JDBridgeCallBack!) {
-        var dic = ["navBarHeight": Const.realNavBarHeight, "statusBarHeight": Const.statusBarHeight]
+        var dic: [String: CGFloat] = [:]
+        dic["navBarHeight"] = Const.realNavBarHeight
+        dic["statusBarHeight"] = Const.statusBarHeight
         dic["screenHeight"] = Const.screenHeight
         dic["bottomSafeHeight"] = Const.bottomSafeHeight
         callback.onSuccess(dic)
@@ -66,7 +94,18 @@ import Foundation
     
     /// 获取屏幕信息
     private func handleGetScreenInfo(callback: JDBridgeCallBack!) {
-        
+        let screenInfo = [
+            "screenWidth": Const.screenWidth,
+            "screenHeight": Const.screenHeight,
+            "statusBarHeight": Const.statusBarHeight,
+            "navBarHeight": Const.navBarHeight,
+            "bottomSafeHeight": Const.bottomSafeHeight,
+            "isIphoneX": Const.isIphoneX,
+            "deviceModel": Const.appPlatform(),
+            "systemVersion": Const.OSVersion(),
+            "appVersion": Const.appVersion(),
+        ] as [String : Any]
+        callback.onSuccess(screenInfo)
     }
 }
 

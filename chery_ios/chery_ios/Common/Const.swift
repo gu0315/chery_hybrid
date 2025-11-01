@@ -164,9 +164,7 @@ public extension Const {
                         function: String = #function,
                         line: Int = #line)
     {
-        
         if Const.config == .release {
-            print("relase")
             return
         }
         let fileName = (file as NSString).lastPathComponent

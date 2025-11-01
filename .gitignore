@@ -1,0 +1,10 @@
+# 忽略所有二进制框架文件
+离线打包/iOS/SDK/SDK/Libs/*.framework/
+离线打包/iOS/SDK/SDK/Libs/*.xcframework/
+离线打包/iOS/SDK/SDK/Libs/
+# 通用忽略规则
+.DS_Store
+*.dSYM
+*.ipa
+*.xcarchive
+*.zip

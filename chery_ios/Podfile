@@ -6,6 +6,8 @@ target 'chery_ios' do
   pod 'MJExtension'
   # 离线包方案
   pod 'TheRouter', '1.1.8'
+  # 动画库
+  pod 'lottie-ios'
 end
 
 post_install do
