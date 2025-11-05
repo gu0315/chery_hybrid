@@ -457,6 +457,7 @@
 		E6383FBB2EB51B8100E2B142 /* libDCUniCanvas.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDCUniCanvas.a; path = ../SDK/Libs/libDCUniCanvas.a; sourceTree = "<group>"; };
 		E6383FBD2EB51B8300E2B142 /* libDCUniBMap.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDCUniBMap.a; path = ../SDK/Libs/libDCUniBMap.a; sourceTree = "<group>"; };
 		E6383FBF2EB51B8E00E2B142 /* libbmapimp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbmapimp.a; path = ../SDK/Libs/libbmapimp.a; sourceTree = "<group>"; };
+		E69B335E2EBB212D00DB9D38 /* HBuilderDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = HBuilderDebug.entitlements; path = HBuilder/HBuilderDebug.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -845,6 +846,7 @@
 		8EED628F198A1D13000A4449 = {
 			isa = PBXGroup;
 			children = (
+				E69B335E2EBB212D00DB9D38 /* HBuilderDebug.entitlements */,
 				2F9FE7EB2BD8E849001137CC /* PrivacyInfo.xcprivacy */,
 				6731F399232F4F03007838BC /* HBuilder.entitlements */,
 				8EED62A1198A1D13000A4449 /* HBuilder-Hello */,
@@ -1035,9 +1037,7 @@
 				ORGANIZATIONNAME = DCloud;
 				TargetAttributes = {
 					8EED6297198A1D13000A4449 = {
-						DevelopmentTeam = YQM5H857L5;
 						LastSwiftMigration = 1320;
-						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -1217,13 +1217,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = HBuilder/HBuilder.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = HBuilder/HBuilderDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 20501;
-				DEVELOPMENT_TEAM = YQM5H857L5;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 47P5F87LGQ;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 85322UV8RR;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1268,11 +1268,11 @@
 					"-lAMapImp",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.souche.lianjinshuju;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cheryge.greenenergy.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a7e03077-46db-4b91-b0c4-20fd613c1e14";
-				PROVISIONING_PROFILE_SPECIFIER = wildcard;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = lianjinshuju_debug;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "HBuilder-Hello/HBuilder-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1291,9 +1291,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = HBuilder/HBuilder.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 20501;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
@@ -1339,7 +1338,7 @@
 					"-lAMapImp",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.dcloud.H;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cheryge.greenenergy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
