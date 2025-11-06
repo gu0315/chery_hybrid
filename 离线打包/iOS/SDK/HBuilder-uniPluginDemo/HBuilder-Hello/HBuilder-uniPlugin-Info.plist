@@ -53,11 +53,13 @@
 			</array>
 		</dict>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLName</key>
 			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wxbe7f03382358338d</string>
+				<string>wx3aeba17397e7136d</string>
 			</array>
 		</dict>
 		<dict>
@@ -77,8 +79,17 @@
 	<string>13453452345</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>JCore</key>
+	<dict>
+		<key>APP_KEY</key>
+		<string>ed2349e275c4868b9d1a154e</string>
+		<key>CHANNEL</key>
+		<string>极光认证</string>
+	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>weixinULAPI</string>
+		<string>weixinURLParamsAPI</string>
 		<string>tencentweiboSdkv2</string>
 		<string>weibosdk2.5</string>
 		<string>sinaweibo</string>
@@ -400,16 +411,13 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>amap</key>
 	<dict>
@@ -434,13 +442,6 @@
 	<string>3818fc509034541e1fb9512bc1f647d5</string>
 	<key>dcloud_uninview_background</key>
 	<true/>
-	<key>JCore</key>
-	<dict>
-		<key>APP_KEY</key>
-		<string>ed2349e275c4868b9d1a154e</string>
-		<key>CHANNEL</key>
-		<string>极光认证</string>
-	</dict>
 	<key>dcloud_uniplugins</key>
 	<array>
 		<dict>
@@ -493,7 +494,7 @@
 	<key>weixin</key>
 	<dict>
 		<key>appSecret</key>
-		<string>63dc426ecade8c7bb820c1820f310957</string>
+		<string>90b7c31e95b510e1551028bea03e39f1</string>
 		<key>appid</key>
 		<string>wx3aeba17397e7136d</string>
 	</dict>

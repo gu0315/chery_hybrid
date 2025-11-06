@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>weixinoauth</key>
+	<dict>
+		<key>appid</key>
+		<string>wx3aeba17397e7136d</string>
+		<key>appSecret</key>
+		<string>90b7c31e95b510e1551028bea03e39f1</string>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
@@ -53,11 +60,13 @@
 			</array>
 		</dict>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLName</key>
 			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wxbe7f03382358338d</string>
+				<string>wx3aeba17397e7136d</string>
 			</array>
 		</dict>
 		<dict>
@@ -77,6 +86,13 @@
 	<string>__UNI__F0A88DE</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>JCore</key>
+	<dict>
+		<key>APP_KEY</key>
+		<string>ed2349e275c4868b9d1a154e</string>
+		<key>CHANNEL</key>
+		<string>极光认证</string>
+	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>tencentweiboSdkv2</string>
@@ -408,7 +424,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>UniversalLinks</key>
-	<string>填写自己的值</string>
+	<string>https://www.cheryge.com/</string>
 	<key>amap</key>
 	<dict>
 		<key>appkey</key>
@@ -429,6 +445,21 @@
 	<true/>
 	<key>dcloud_uniplugins</key>
 	<array>
+		<dict>
+			<key>hooksClass</key>
+			<string>TestPluginProxy</string>
+			<key>plugins</key>
+			<array>
+				<dict>
+					<key>class</key>
+					<string>JVerificationModule</string>
+					<key>name</key>
+					<string>JG-JVerification</string>
+					<key>type</key>
+					<string>module</string>
+				</dict>
+			</array>
+		</dict>
 		<dict>
 			<key>hooksClass</key>
 			<string>DCRichAlertProxy</string>
@@ -473,9 +504,9 @@
 	<key>weixin</key>
 	<dict>
 		<key>appSecret</key>
-		<string>去官方网站申请对应的值</string>
+		<string>90b7c31e95b510e1551028bea03e39f1</string>
 		<key>appid</key>
-		<string>去官方网站申请对应的appid</string>
+		<string>wx3aeba17397e7136d</string>
 	</dict>
 	<key>xiaomioauth</key>
 	<dict>

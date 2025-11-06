@@ -122,6 +122,7 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
     [self application:application handleOpenURL:url];
+    [PDRCore handleSysEvent:PDRCoreSysEventOpenURL withObject:url];
     return YES;
 }
 

@@ -638,6 +638,7 @@
 		9759EDC9245048CF0076CC51 /* DCTestUniPlugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DCTestUniPlugin.xcodeproj; path = DCTestUniPlugin/DCTestUniPlugin.xcodeproj; sourceTree = "<group>"; };
 		E6DD783E2EBCCFE200DA76D5 /* UniPluginJVerification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UniPluginJVerification.framework; sourceTree = "<group>"; };
 		E6DD78572EBCD28D00DA76D5 /* UniPluginJCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UniPluginJCore.framework; sourceTree = "<group>"; };
+		E6DD78602EBCEE1E00DA76D5 /* HBuilder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = HBuilder.entitlements; path = HBuilder/HBuilder.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -645,6 +646,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EED65A0198A5789000A4449 /* Accounts.framework in Frameworks */,
+				8EED659E198A5782000A4449 /* Social.framework in Frameworks */,
 				937D8BCF2E01828100E050B5 /* TencentOpenAPI.xcframework in Frameworks */,
 				2F434B092C787F9F0020481E /* AlipaySDK.xcframework in Frameworks */,
 				2F4864C7293E121C00142360 /* DCUniRecord.framework in Frameworks */,
@@ -756,8 +759,6 @@
 				8EED6596198A574C000A4449 /* CoreLocation.framework in Frameworks */,
 				8EED65A8198A6273000A4449 /* OpenGLES.framework in Frameworks */,
 				8EED65A6198A626B000A4449 /* MapKit.framework in Frameworks */,
-				8EED65A0198A5789000A4449 /* Accounts.framework in Frameworks */,
-				8EED659E198A5782000A4449 /* Social.framework in Frameworks */,
 				8EED659C198A5773000A4449 /* AddressBookUI.framework in Frameworks */,
 				8EED6598198A5754000A4449 /* MessageUI.framework in Frameworks */,
 				2F5FAE6E2865DB9800430AFA /* BMKLocationKit.framework in Frameworks */,
@@ -1059,6 +1060,7 @@
 		8EED628F198A1D13000A4449 = {
 			isa = PBXGroup;
 			children = (
+				E6DD78602EBCEE1E00DA76D5 /* HBuilder.entitlements */,
 				2F9FE7EE2BD8E85F001137CC /* PrivacyInfo.xcprivacy */,
 				9759EDC9245048CF0076CC51 /* DCTestUniPlugin.xcodeproj */,
 				8EED62A1198A1D13000A4449 /* HBuilder-Hello */,
@@ -1411,9 +1413,7 @@
 				ORGANIZATIONNAME = DCloud;
 				TargetAttributes = {
 					8EED6297198A1D13000A4449 = {
-						DevelopmentTeam = YQM5H857L5;
 						LastSwiftMigration = 1320;
-						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1644,10 +1644,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = HBuilder/HBuilder.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = YQM5H857L5;
+				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 85322UV8RR;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
@@ -1689,7 +1690,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cheryge.greenenergy.dev;
 				PRODUCT_NAME = UniPluginDemo;
 				PROVISIONING_PROFILE = "a7e03077-46db-4b91-b0c4-20fd613c1e14";
-				PROVISIONING_PROFILE_SPECIFIER = wildcard;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "HBuilder-Hello/HBuilder-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1708,6 +1709,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = HBuilder/HBuilder.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
