@@ -434,13 +434,13 @@
 	<string>3818fc509034541e1fb9512bc1f647d5</string>
 	<key>dcloud_uninview_background</key>
 	<true/>
-    <key>JCore</key>
-    <dict>
-        <key>APP_KEY</key>
-        <string>ed2349e275c4868b9d1a154e</string>
-        <key>CHANNEL</key>
-        <string>极光认证</string>
-    </dict>
+	<key>JCore</key>
+	<dict>
+		<key>APP_KEY</key>
+		<string>ed2349e275c4868b9d1a154e</string>
+		<key>CHANNEL</key>
+		<string>极光认证</string>
+	</dict>
 	<key>dcloud_uniplugins</key>
 	<array>
 		<dict>
@@ -464,14 +464,14 @@
 					<key>type</key>
 					<string>component</string>
 				</dict>
-                <dict>
-                    <key>class</key>
-                    <string>JVerificationModule</string>
-                    <key>name</key>
-                    <string>JG-JVerification</string>
-                    <key>type</key>
-                    <string>module</string>
-                </dict>
+				<dict>
+					<key>class</key>
+					<string>JVerificationModule</string>
+					<key>name</key>
+					<string>JG-JVerification</string>
+					<key>type</key>
+					<string>module</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>
@@ -493,9 +493,9 @@
 	<key>weixin</key>
 	<dict>
 		<key>appSecret</key>
-		<string>去官方申请对应的值</string>
+		<string>63dc426ecade8c7bb820c1820f310957</string>
 		<key>appid</key>
-		<string>去官方申请对应的appid</string>
+		<string>wx3aeba17397e7136d</string>
 	</dict>
 </dict>
 </plist>
