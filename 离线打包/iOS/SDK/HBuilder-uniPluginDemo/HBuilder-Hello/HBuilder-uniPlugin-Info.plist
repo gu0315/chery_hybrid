@@ -473,6 +473,14 @@
 					<key>type</key>
 					<string>module</string>
 				</dict>
+                <dict>
+                    <key>class</key>
+                    <string>QXTestModule</string>
+                    <key>name</key>
+                    <string>QXTestUniPlugin-QXTestModule</string>
+                    <key>type</key>
+                    <string>module</string>
+                </dict>
 			</array>
 		</dict>
 		<dict>

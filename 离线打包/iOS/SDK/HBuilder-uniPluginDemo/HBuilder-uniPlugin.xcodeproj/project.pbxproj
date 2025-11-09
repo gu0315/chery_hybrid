@@ -191,6 +191,7 @@
 		95DA22F0276A0B1E00071681 /* UMAPM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DA22EE276A0B1E00071681 /* UMAPM.framework */; };
 		97A515B92450496100BC028D /* DCTestUniPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9759EDCE245048CF0076CC51 /* DCTestUniPlugin.framework */; };
 		97D33A5D24750907004DDFB5 /* liblibPDRCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 247F85DA1FA32B2C006ECAC6 /* liblibPDRCore.a */; };
+		E6A609962EC05DA000BDCA46 /* QXTestUniPlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A609932EC05D5900BDCA46 /* QXTestUniPlugin.framework */; };
 		E6DD783F2EBCCFE200DA76D5 /* UniPluginJVerification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6DD783E2EBCCFE200DA76D5 /* UniPluginJVerification.framework */; };
 		E6DD78582EBCD28D00DA76D5 /* UniPluginJCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6DD78572EBCD28D00DA76D5 /* UniPluginJCore.framework */; };
 /* End PBXBuildFile section */
@@ -209,6 +210,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9759EDBD245048A40076CC51;
 			remoteInfo = DCTestUniPlugin;
+		};
+		E6A609922EC05D5900BDCA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6A6098C2EC05D5900BDCA46 /* QXTestUniPlugin.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E6A6097F2EC05D0700BDCA46;
+			remoteInfo = QXTestUniPlugin;
+		};
+		E6A609942EC05D9300BDCA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6A6098C2EC05D5900BDCA46 /* QXTestUniPlugin.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E6A6097E2EC05D0700BDCA46;
+			remoteInfo = QXTestUniPlugin;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -636,6 +651,7 @@
 		95D879FD2583A6A800244F71 /* WXBridgeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXBridgeProtocol.h; sourceTree = "<group>"; };
 		95DA22EE276A0B1E00071681 /* UMAPM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UMAPM.framework; path = ../SDK/Libs/UMAPM.framework; sourceTree = "<group>"; };
 		9759EDC9245048CF0076CC51 /* DCTestUniPlugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DCTestUniPlugin.xcodeproj; path = DCTestUniPlugin/DCTestUniPlugin.xcodeproj; sourceTree = "<group>"; };
+		E6A6098C2EC05D5900BDCA46 /* QXTestUniPlugin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QXTestUniPlugin.xcodeproj; path = QXTestUniPlugin/QXTestUniPlugin.xcodeproj; sourceTree = "<group>"; };
 		E6DD783E2EBCCFE200DA76D5 /* UniPluginJVerification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UniPluginJVerification.framework; sourceTree = "<group>"; };
 		E6DD78572EBCD28D00DA76D5 /* UniPluginJCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UniPluginJCore.framework; sourceTree = "<group>"; };
 		E6DD78602EBCEE1E00DA76D5 /* HBuilder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = HBuilder.entitlements; path = HBuilder/HBuilder.entitlements; sourceTree = "<group>"; };
@@ -646,6 +662,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6A609962EC05DA000BDCA46 /* QXTestUniPlugin.framework in Frameworks */,
 				8EED65A0198A5789000A4449 /* Accounts.framework in Frameworks */,
 				8EED659E198A5782000A4449 /* Social.framework in Frameworks */,
 				937D8BCF2E01828100E050B5 /* TencentOpenAPI.xcframework in Frameworks */,
@@ -1060,6 +1077,7 @@
 		8EED628F198A1D13000A4449 = {
 			isa = PBXGroup;
 			children = (
+				E6A6098C2EC05D5900BDCA46 /* QXTestUniPlugin.xcodeproj */,
 				E6DD78602EBCEE1E00DA76D5 /* HBuilder.entitlements */,
 				2F9FE7EE2BD8E85F001137CC /* PrivacyInfo.xcprivacy */,
 				9759EDC9245048CF0076CC51 /* DCTestUniPlugin.xcodeproj */,
@@ -1381,6 +1399,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		E6A6098D2EC05D5900BDCA46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6A609932EC05D5900BDCA46 /* QXTestUniPlugin.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1396,6 +1422,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E6A609952EC05D9300BDCA46 /* PBXTargetDependency */,
 				97A515B72450495A00BC028D /* PBXTargetDependency */,
 			);
 			name = HBuilder;
@@ -1435,6 +1462,10 @@
 					ProductGroup = 9759EDCA245048CF0076CC51 /* Products */;
 					ProjectRef = 9759EDC9245048CF0076CC51 /* DCTestUniPlugin.xcodeproj */;
 				},
+				{
+					ProductGroup = E6A6098D2EC05D5900BDCA46 /* Products */;
+					ProjectRef = E6A6098C2EC05D5900BDCA46 /* QXTestUniPlugin.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1449,6 +1480,13 @@
 			fileType = wrapper.framework;
 			path = DCTestUniPlugin.framework;
 			remoteRef = 9759EDCD245048CF0076CC51 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E6A609932EC05D5900BDCA46 /* QXTestUniPlugin.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = QXTestUniPlugin.framework;
+			remoteRef = E6A609922EC05D5900BDCA46 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1538,6 +1576,11 @@
 			isa = PBXTargetDependency;
 			name = DCTestUniPlugin;
 			targetProxy = 97A515B62450495A00BC028D /* PBXContainerItemProxy */;
+		};
+		E6A609952EC05D9300BDCA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = QXTestUniPlugin;
+			targetProxy = E6A609942EC05D9300BDCA46 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
