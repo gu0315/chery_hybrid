@@ -4,15 +4,15 @@
     "type": "MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.android.simple",
+  "applicationId": "com.cheryge.greenenergy.dev",
   "variantName": "debug",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 1,
-      "versionName": "1.0",
+      "versionCode": 129,
+      "versionName": "12.0",
       "outputFile": "AndroidManifest.xml"
     }
   ],

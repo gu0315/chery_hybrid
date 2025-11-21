@@ -120,6 +120,9 @@
 		E6383FB62EB5121D00E2B142 /* DCUniVideoPublic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 672CE2B222DC9118005A0D88 /* DCUniVideoPublic.framework */; };
 		E6383FBA2EB51B1400E2B142 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6383FB92EB51B1400E2B142 /* Masonry.framework */; };
 		E6383FBC2EB51B8100E2B142 /* libDCUniCanvas.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6383FBB2EB51B8100E2B142 /* libDCUniCanvas.a */; };
+		E6C932D82ED0351F00CFB900 /* liblibShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C932D72ED0351F00CFB900 /* liblibShare.a */; };
+		E6C932DA2ED0355000CFB900 /* libweixinShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C932D92ED0355000CFB900 /* libweixinShare.a */; };
+		E6C932DC2ED0356000CFB900 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C932DB2ED0356000CFB900 /* libWeChatSDK.a */; };
 		E6DD78662EBCFFCE00DA76D5 /* UniPluginJVerification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6DD78652EBCFFCE00DA76D5 /* UniPluginJVerification.framework */; };
 		E6DD786C2EBD00BB00DA76D5 /* UniPluginJCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6DD786B2EBD00BB00DA76D5 /* UniPluginJCore.framework */; };
 /* End PBXBuildFile section */
@@ -460,6 +463,9 @@
 		E6383FBD2EB51B8300E2B142 /* libDCUniBMap.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDCUniBMap.a; path = ../SDK/Libs/libDCUniBMap.a; sourceTree = "<group>"; };
 		E6383FBF2EB51B8E00E2B142 /* libbmapimp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbmapimp.a; path = ../SDK/Libs/libbmapimp.a; sourceTree = "<group>"; };
 		E69B335E2EBB212D00DB9D38 /* HBuilderDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = HBuilderDebug.entitlements; path = HBuilder/HBuilderDebug.entitlements; sourceTree = "<group>"; };
+		E6C932D72ED0351F00CFB900 /* liblibShare.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblibShare.a; path = ../SDK/Libs/liblibShare.a; sourceTree = "<group>"; };
+		E6C932D92ED0355000CFB900 /* libweixinShare.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libweixinShare.a; path = ../SDK/Libs/libweixinShare.a; sourceTree = "<group>"; };
+		E6C932DB2ED0356000CFB900 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = ../SDK/Libs/libWeChatSDK.a; sourceTree = "<group>"; };
 		E6DD78652EBCFFCE00DA76D5 /* UniPluginJVerification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniPluginJVerification.framework; path = "../../../../../../../Downloads/JG-JVerification/ios/UniPluginJVerification.framework"; sourceTree = "<group>"; };
 		E6DD78672EBCFFDE00DA76D5 /* UniPluginJCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniPluginJCore.framework; path = "../../../../../../../Downloads/JG-JCore/ios/UniPluginJCore.framework"; sourceTree = "<group>"; };
 		E6DD78692EBD002000DA76D5 /* jcore-ios-3.1.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "jcore-ios-3.1.2.a"; path = "../../../../../../../Downloads/jverification-hbuilder-plugin-jg/UniPlugin-JVerification-iOS/HBuilder-uniPluginDemo/jcore-ios-3.1.2.a"; sourceTree = "<group>"; };
@@ -471,6 +477,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EED641E198A265F000A4449 /* CoreTelephony.framework in Frameworks */,
+				8EED641C198A2654000A4449 /* SystemConfiguration.framework in Frameworks */,
+				E6C932D82ED0351F00CFB900 /* liblibShare.a in Frameworks */,
 				8EED65A0198A5789000A4449 /* Accounts.framework in Frameworks */,
 				8EED659E198A5782000A4449 /* Social.framework in Frameworks */,
 				E6DD786C2EBD00BB00DA76D5 /* UniPluginJCore.framework in Frameworks */,
@@ -486,10 +495,8 @@
 				E6383F9B2EB50E3C00E2B142 /* libAMapLocationPlugin.a in Frameworks */,
 				E6383FAD2EB50FF900E2B142 /* MAMapKit.framework in Frameworks */,
 				E6383FB52EB511A800E2B142 /* libDCUniMap.a in Frameworks */,
-				8EED641C198A2654000A4449 /* SystemConfiguration.framework in Frameworks */,
 				E6383FB32EB5117F00E2B142 /* libDCUniAmap.a in Frameworks */,
 				E6383FA62EB50F7300E2B142 /* libAMapImp.a in Frameworks */,
-				8EED641E198A265F000A4449 /* CoreTelephony.framework in Frameworks */,
 				7ACF69AD19FF89B1007C64F1 /* Security.framework in Frameworks */,
 				E6383FA32EB50EFA00E2B142 /* ExternalAccessory.framework in Frameworks */,
 				24BD5AF01C99494A00B05AA2 /* libz.tbd in Frameworks */,
@@ -558,6 +565,8 @@
 				8EED6420198A2668000A4449 /* MediaPlayer.framework in Frameworks */,
 				2FDE6A3C296D7559004C7701 /* GTSDK.xcframework in Frameworks */,
 				8EED6416198A2635000A4449 /* CoreVideo.framework in Frameworks */,
+				E6C932DC2ED0356000CFB900 /* libWeChatSDK.a in Frameworks */,
+				E6C932DA2ED0355000CFB900 /* libweixinShare.a in Frameworks */,
 				8EED6414198A262C000A4449 /* CoreMedia.framework in Frameworks */,
 				8EED6412198A2622000A4449 /* MobileCoreServices.framework in Frameworks */,
 			);
@@ -874,6 +883,9 @@
 		8EED629A198A1D13000A4449 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6C932DB2ED0356000CFB900 /* libWeChatSDK.a */,
+				E6C932D92ED0355000CFB900 /* libweixinShare.a */,
+				E6C932D72ED0351F00CFB900 /* liblibShare.a */,
 				E6DD786B2EBD00BB00DA76D5 /* UniPluginJCore.framework */,
 				E6DD78692EBD002000DA76D5 /* jcore-ios-3.1.2.a */,
 				E6DD78672EBCFFDE00DA76D5 /* UniPluginJCore.framework */,

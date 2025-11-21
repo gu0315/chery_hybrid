@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.android.simple.simpleDemo-mergeDebugResources-12:/values-v23/values-v23.xml",
+            "outputFile": "com.cheryge.greenenergy.dev.simpleDemo-mergeDebugResources-12:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/guqianxiang/.gradle/caches/8.11.1/transforms/9eeb30f4aa8cd90015309ee238e675a8/transformed/appcompat-1.1.0/res/values-v23/values-v23.xml",
+                    "source": "/Users/guqianxiang/.gradle/caches/8.13/transforms/7d099cdbfe7e9ed362f1f6e023e26256/transformed/appcompat-1.1.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,37,41,42,43,44",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

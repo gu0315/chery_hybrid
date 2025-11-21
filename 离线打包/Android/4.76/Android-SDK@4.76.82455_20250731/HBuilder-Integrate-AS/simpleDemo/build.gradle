@@ -3,13 +3,13 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 35
     buildToolsVersion '35.0.0'
-    namespace 'com.android.simple'
+    namespace 'com.cheryge.greenenergy.dev'
     defaultConfig {
-        applicationId "com.android.simple"
+        applicationId "com.cheryge.greenenergy.dev"
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 129
+        versionName "12.0"
         multiDexEnabled true
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_8
@@ -39,9 +39,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    aaptOptions {
+    packaging {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+    androidResources {
+        ignoreAssetsPattern '!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~'
         additionalParameters '--auto-add-overlay'
-        ignoreAssetsPattern "!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~"
     }
 }
 

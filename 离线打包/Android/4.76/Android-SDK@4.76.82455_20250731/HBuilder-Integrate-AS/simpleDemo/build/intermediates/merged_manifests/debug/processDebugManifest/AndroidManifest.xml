@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.simple"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    package="com.cheryge.greenenergy.dev"
+    android:versionCode="129"
+    android:versionName="12.0" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -95,7 +95,7 @@
 
         <meta-data
             android:name="dcloud_appkey"
-            android:value="开发者需登录https://dev.dcloud.net.cn/申请签名" />
+            android:value="ac29d5f1103e220f5895525cd9349f52" />
         <!--
         <activity
             android:name="io.dcloud.imagepick.CustomGalleryActivity"
@@ -145,7 +145,7 @@
             android:windowSoftInputMode="stateAlwaysHidden" /> <!-- gallery******end -->
         <provider
             android:name="io.dcloud.common.util.DCloud_FileProvider"
-            android:authorities="com.android.simple.dc.fileprovider"
+            android:authorities="com.cheryge.greenenergy.dev.dc.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -181,7 +181,7 @@
 
         <provider
             android:name="io.dcloud.sdk.base.service.provider.DCloudAdFileProvider"
-            android:authorities="com.android.simple.dc.fileprovider"
+            android:authorities="com.cheryge.greenenergy.dev.dc.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data

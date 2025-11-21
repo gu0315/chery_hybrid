@@ -2,13 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>weixinoauth</key>
-	<dict>
-		<key>appid</key>
-		<string>wx3aeba17397e7136d</string>
-		<key>appSecret</key>
-		<string>90b7c31e95b510e1551028bea03e39f1</string>
-	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
@@ -89,7 +82,7 @@
 	<key>JCore</key>
 	<dict>
 		<key>APP_KEY</key>
-		<string>ed2349e275c4868b9d1a154e</string>
+		<string>a218983cc0283bcf1d88e4d6</string>
 		<key>CHANNEL</key>
 		<string>极光认证</string>
 	</dict>
@@ -502,6 +495,15 @@
 		<string>去官方网站申请对应的值</string>
 	</dict>
 	<key>weixin</key>
+	<dict>
+		<key>UniversalLinks</key>
+		<string>https://www.cheryge.com/</string>
+		<key>appSecret</key>
+		<string>90b7c31e95b510e1551028bea03e39f1</string>
+		<key>appid</key>
+		<string>wx3aeba17397e7136d</string>
+	</dict>
+	<key>weixinoauth</key>
 	<dict>
 		<key>appSecret</key>
 		<string>90b7c31e95b510e1551028bea03e39f1</string>

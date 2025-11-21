@@ -313,7 +313,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="app_name">HBuilder-SimpleDemo-AS</string>
+    <string name="app_name">奇电加</string>
     <string name="dcloud_Init_fail_tips">Application configuration error detected, please modify according to the document configuration</string>
     <string name="dcloud_ad_error_code_200000">Ad not filled</string>
     <string name="dcloud_ad_error_code_5001">"adpid" is null</string>
