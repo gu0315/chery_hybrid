@@ -30,7 +30,7 @@ android {
         config {
             keyAlias '__uni__08b65c9'
             keyPassword 'S5lAKb3r'
-            storeFile file('/Users/guqianxiang/Desktop/奇瑞绿能/Hybrid容器/离线打包/Android/4.76/Android-SDK@4.76.82455_20250731/HBuilder-HelloUniApp/app/f012b46cdefe72548936447d6bf04ef3.keystore')
+            storeFile file('/Users/guqianxiang/Desktop/奇瑞绿能/Hybrid容器/离线打包/Android/4.76/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/f012b46cdefe72548936447d6bf04ef3.keystore')
             storePassword 'S5lAKb3r'
             v1SigningEnabled true
             v2SigningEnabled true

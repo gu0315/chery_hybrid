@@ -14,10 +14,10 @@ com.cheryge.greenenergy.simpleDemo-jetified-uniapp-v8-release-12 /Users/guqianxi
 com.cheryge.greenenergy.simpleDemo-recyclerview-1.1.0-13 /Users/guqianxiang/.gradle/caches/8.13/transforms/e41dee1919be9df1b39fad0803166267/transformed/recyclerview-1.1.0/res
 com.cheryge.greenenergy.simpleDemo-jetified-oauth-weixin-release-14 /Users/guqianxiang/.gradle/caches/8.13/transforms/f0c67bd29226ff74bc51f6349b11c11f/transformed/jetified-oauth-weixin-release/res
 com.cheryge.greenenergy.simpleDemo-jetified-share-weixin-release-15 /Users/guqianxiang/.gradle/caches/8.13/transforms/f59dca58be785ea517b75fb0c1b7a689/transformed/jetified-share-weixin-release/res
-com.cheryge.greenenergy.simpleDemo-pngs-16 /Users/guqianxiang/Downloads/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/build/generated/res/pngs/debug
-com.cheryge.greenenergy.simpleDemo-resValues-17 /Users/guqianxiang/Downloads/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/build/generated/res/resValues/debug
-com.cheryge.greenenergy.simpleDemo-packageDebugResources-18 /Users/guqianxiang/Downloads/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-com.cheryge.greenenergy.simpleDemo-packageDebugResources-19 /Users/guqianxiang/Downloads/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-com.cheryge.greenenergy.simpleDemo-debug-20 /Users/guqianxiang/Downloads/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/build/intermediates/merged_res/debug/mergeDebugResources
-com.cheryge.greenenergy.simpleDemo-debug-21 /Users/guqianxiang/Downloads/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/src/debug/res
-com.cheryge.greenenergy.simpleDemo-main-22 /Users/guqianxiang/Downloads/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/src/main/res
+com.cheryge.greenenergy.simpleDemo-pngs-16 /Users/guqianxiang/Desktop/奇瑞绿能/Hybrid容器/离线打包/Android/4.76/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/build/generated/res/pngs/debug
+com.cheryge.greenenergy.simpleDemo-resValues-17 /Users/guqianxiang/Desktop/奇瑞绿能/Hybrid容器/离线打包/Android/4.76/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/build/generated/res/resValues/debug
+com.cheryge.greenenergy.simpleDemo-packageDebugResources-18 /Users/guqianxiang/Desktop/奇瑞绿能/Hybrid容器/离线打包/Android/4.76/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.cheryge.greenenergy.simpleDemo-packageDebugResources-19 /Users/guqianxiang/Desktop/奇瑞绿能/Hybrid容器/离线打包/Android/4.76/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.cheryge.greenenergy.simpleDemo-debug-20 /Users/guqianxiang/Desktop/奇瑞绿能/Hybrid容器/离线打包/Android/4.76/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/build/intermediates/merged_res/debug/mergeDebugResources
+com.cheryge.greenenergy.simpleDemo-debug-21 /Users/guqianxiang/Desktop/奇瑞绿能/Hybrid容器/离线打包/Android/4.76/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/src/debug/res
+com.cheryge.greenenergy.simpleDemo-main-22 /Users/guqianxiang/Desktop/奇瑞绿能/Hybrid容器/离线打包/Android/4.76/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/src/main/res
