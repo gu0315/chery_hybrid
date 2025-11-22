@@ -4,15 +4,15 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.cheryge.greenenergy.dev",
+  "applicationId": "com.cheryge.greenenergy",
   "variantName": "debug",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 129,
-      "versionName": "12.0",
+      "versionCode": 1,
+      "versionName": "1.0",
       "outputFile": "simpleDemo-debug.apk"
     }
   ],

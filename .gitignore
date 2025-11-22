@@ -2,9 +2,11 @@
 离线打包/iOS/SDK/SDK/Libs/*.framework/
 离线打包/iOS/SDK/SDK/Libs/*.xcframework/
 离线打包/iOS/SDK/SDK/Libs/
+离线打包/Android/4.76/Android-SDK@4.76.82455_20250731/HBuilder-Integrate-AS/simpleDemo/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/apps/*
 # 通用忽略规则
 .DS_Store
 *.dSYM
 *.ipa
 *.xcarchive
 *.zip
+

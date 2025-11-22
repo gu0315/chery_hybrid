@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.cheryge.greenenergy.dev.simpleDemo-mergeDebugResources-12:/values-sv/values-sv.xml",
+            "outputFile": "com.cheryge.greenenergy.simpleDemo-mergeDebugResources-18:/values-sv/values-sv.xml",
             "map": [
                 {
                     "source": "/Users/guqianxiang/.gradle/caches/8.13/transforms/7d099cdbfe7e9ed362f1f6e023e26256/transformed/appcompat-1.1.0/res/values-sv/values-sv.xml",

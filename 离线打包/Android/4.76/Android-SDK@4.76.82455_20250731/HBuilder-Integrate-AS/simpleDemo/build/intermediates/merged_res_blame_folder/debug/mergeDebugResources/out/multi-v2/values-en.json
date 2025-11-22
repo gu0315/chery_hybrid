@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.cheryge.greenenergy.dev.simpleDemo-mergeDebugResources-12:/values-en/values-en.xml",
+            "outputFile": "com.cheryge.greenenergy.simpleDemo-mergeDebugResources-18:/values-en/values-en.xml",
             "map": [
                 {
                     "source": "/Users/guqianxiang/.gradle/caches/8.13/transforms/d341242a4719498d8ac2b3b28ee43b1c/transformed/jetified-lib.5plus.base-release/res/values-en/values-en.xml",

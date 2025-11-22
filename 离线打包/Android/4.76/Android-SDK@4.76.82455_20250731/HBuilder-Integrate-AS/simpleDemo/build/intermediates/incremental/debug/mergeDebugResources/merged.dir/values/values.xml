@@ -313,7 +313,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="app_name">奇电加</string>
+    <string name="app_name">HBuilder-SimpleDemo-AS</string>
     <string name="dcloud_Init_fail_tips">Application configuration error detected, please modify according to the document configuration</string>
     <string name="dcloud_ad_error_code_200000">Ad not filled</string>
     <string name="dcloud_ad_error_code_5001">"adpid" is null</string>
@@ -424,11 +424,29 @@
     <string name="dcloud_feature_barcode2_no_camera_permission">no camera permission</string>
     <string name="dcloud_feature_error_tips">please check whether %s related nodes are added in assets/data/properties.xml file.</string>
     <string name="dcloud_feature_error_tips2">%s module was not added when packaging, please refer to</string>
+    <string name="dcloud_feature_oauth_weixin_plugin_description">wechat</string>
+    <string name="dcloud_feature_share_wechat_error_auth_fail">auth fail</string>
+    <string name="dcloud_feature_share_wechat_error_client_not_installed">wechat not installed</string>
+    <string name="dcloud_feature_share_wechat_error_param_not_complete">param not complete</string>
+    <string name="dcloud_feature_share_wechat_error_param_type_error">type error. check again</string>
+    <string name="dcloud_feature_share_wechat_plugin_desc">wechat</string>
+    <string name="dcloud_feature_share_wechat_plugin_name">wechat share</string>
+    <string name="dcloud_feature_weex_amap_msg_bounds_cannot_null">id、src、bounds can not be null</string>
+    <string name="dcloud_feature_weex_amap_msg_bounds_create_fail">bounds create fail</string>
+    <string name="dcloud_feature_weex_amap_msg_key_invalid">key invalid</string>
+    <string name="dcloud_feature_weex_amap_msg_network_error">network error</string>
+    <string name="dcloud_feature_weex_amap_msg_param_error">parameters error</string>
+    <string name="dcloud_feature_weex_amap_msg_search_error">search fail</string>
+    <string name="dcloud_feature_weex_amap_msg_unknown_reason">unknown reson</string>
+    <string name="dcloud_feature_weex_amap_no_search_result">sorry. no result searched</string>
     <string name="dcloud_feature_weex_jsfk_not_found_tips">The current environment cannot run the uni app application of "%s" version!</string>
     <string name="dcloud_feature_weex_msg_cannot_find_file_by_path">can not find file by path</string>
     <string name="dcloud_feature_weex_msg_page_destroyed">page had destroyed</string>
     <string name="dcloud_feature_weex_msg_param_empty">param is empty</string>
     <string name="dcloud_feature_weex_msg_param_invalid">param invalid</string>
+    <string name="dcloud_feature_wxpay_loading">payment loading</string>
+    <string name="dcloud_feature_wxpay_plugin_description">wechat</string>
+    <string name="dcloud_feature_wxshare_loading">share loading</string>
     <string name="dcloud_gallery_Next">Next</string>
     <string name="dcloud_gallery_all_dir_name">All Pictures &amp; Videos</string>
     <string name="dcloud_gallery_all_image">All Photos</string>
@@ -1964,6 +1982,12 @@
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
     </style>
     <style name="Platform.Widget.AppCompat.Spinner" parent="android:Widget.Holo.Spinner"/>
+    <style name="ProjectDialogTheme" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:backgroundDimAmount">0.1</item>
+    </style>
     <style name="RtlOverlay.DialogWindowTitle.AppCompat" parent="Base.DialogWindowTitle.AppCompat">
     </style>
     <style name="RtlOverlay.Widget.AppCompat.ActionBar.TitleItem" parent="android:Widget">

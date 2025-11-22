@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.cheryge.greenenergy.dev.simpleDemo-mergeDebugResources-12:/values-ldrtl-v17/values-ldrtl-v17.xml",
+            "outputFile": "com.cheryge.greenenergy.simpleDemo-mergeDebugResources-18:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
                     "source": "/Users/guqianxiang/.gradle/caches/8.13/transforms/e09d8e17eb935c6e811fcac06f20d242/transformed/jetified-uniapp-v8-release/res/values-ldrtl-v17/values-ldrtl-v17.xml",
